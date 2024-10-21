@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observatorio del Río Atoyac</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contenedor principal */
+        #main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Mapa a pantalla completa */
+        #map-container {
+            flex: 1;
+            position: relative;
+            height: 100vh; /* Mapa ocupa toda la pantalla */
+            z-index: 1;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        /* Controles personalizados */
+        .custom-controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .custom-controls button {
+            background-color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .custom-controls button i, .custom-controls button span {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .custom-controls button:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Filtros de mapa personalizados */
+        .layer-control {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            width: 220px;
+            transition: all 0.3s ease;
+        }
+
+        #layer-controls {
+            display: none; /* Oculto por defecto */
+        }
+
+        .toggle-button {
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .layer-control h5 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .layer-control .layer-group {
+            margin-bottom: 10px;
+        }
+
+        .layer-control input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .layer-control input[type="range"] {
+            width: 100%;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #adb5bd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Setup -->
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #622132;">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">Observatorio del Río Atoyac</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">Geoportal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <i class="fas fa-bell text-white"></i> Sistema de Alerta Temprana
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <i class="fas fa-water text-white"></i> Semáforo de Calidad de Agua
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">
+                            <i class="fas fa-leaf text-white"></i> Buenas Prácticas
+                        </a>
+                    </li>
+                   </li><a class="nav-link  text-light" aria-current="page" href="index.html">
+                        <i class="bi bi-house-door-fill me-1"></i>Página Principal
+                    </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenedor principal con mapa y controles -->
+    <div id="main-container">
+        <div id="map-container">
+            <div id="map"></div>
+
+            <!-- Controles personalizados a la izquierda -->
+            <div class="custom-controls">
+                <button id="zoom-in"><i class="fas fa-plus"></i></button>
+                <button id="zoom-out"><i class="fas fa-minus"></i></button>
+                <button id="fullscreen"><i class="fas fa-expand"></i></button>
+                <button id="geolocate"><i class="fas fa-map-marker-alt"></i></button>
+                <button id="share"><i class="fas fa-share-alt"></i></button>
+                <button id="bookmark"><i class="fas fa-flag"></i></button>
+                <button id="custom-hand"><i class="fas fa-hand-pointer"></i></button>
+                <button id="kml"><span>KML</span></button>
+            </div>
+
+            <!-- Filtro de capas con control de opacidad y botón de colapso -->
+            <div id="layer-control-container" class="layer-control">
+                <button id="toggle-layer-control" class="toggle-button">
+                    <i class="fas fa-layer-group "></i>
+                </button>
+                <div id="layer-controls">
+                    <h5>Capas de Mapa</h5>
+                    <div class="layer-group">
+                        <label for="chk-riesgos">
+                            <i class="fas fa-exclamation-triangle" style="color: orange;"></i> Riesgos
+                        </label>
+                        <input type="checkbox" id="chk-riesgos">
+                        <input type="range" id="opacity-riesgos" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <div class="layer-group">
+                        <label for="chk-satelital">
+                            <i class="fas fa-satellite-dish" style="color: blue;"></i> Satelital
+                        </label>
+                        <input type="checkbox" id="chk-satelital">
+                        <input type="range" id="opacity-satelital" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <!-- Nueva capa GeoJSON -->
+                    <div class="layer-group">
+                        <label for="chk-geojson">
+                        <i class="fas fa-water" style="color: #1E90FF;"></i> RH20Ac
+
+                        </label>
+                        <input type="checkbox" id="chk-geojson">
+                        <input type="range" id="opacity-geojson" min="0" max="1" step="0.1" value="1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer style="background-color: #622132; color: #fff;">
+        <p>&copy; 2024 Observatorio del Río Atoyac, Oaxaca. Todos los derechos reservados.</p>
+        <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a> | <a href="#">Contacto</a></p>
+    </footer>
+
+    <!-- Scripts Bootstrap y Leaflet -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        // Inicializar el mapa con Leaflet sin los controles de zoom predeterminados
+        var map = L.map('map', {
+            zoomControl: false,
+            center: [17.0654, -96.7266],
+            zoom: 10
+        });
+
+        // Añadir capa base OpenStreetMap
+        var baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Crear las capas adicionales
+        var riesgosLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { opacity: 1 });
+        var satelitalLayer = L.tileLayer('https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', { opacity: 1 });
+
+        // Crear la capa GeoJSON (inicialmente vacía)
+        var geojsonLayer = L.geoJSON(null, { opacity: 1 });
+
+        // Cargar y añadir el GeoJSON al mapa (solo se agrega si el checkbox está activado)
+        fetch('https://raw.githubusercontent.com/h3rm3/mockup1/refs/heads/main/salida_reproyectada.geojson')
+            .then(response => response.json())
+            .then(data => {
+                geojsonLayer.addData(data);  // Añadir los datos al layer
+                map.fitBounds(geojsonLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON
+            })
+            .catch(error => console.log("Error al cargar el GeoJSON:", error));
+
+        // Añadir los listeners para mostrar/ocultar las capas con los checkboxes
+        document.getElementById('chk-riesgos').addEventListener('change', function() {
+            if (this.checked) {
+                map.addLayer(riesgosLayer);
+            } else {
+                map.removeLayer(riesgosLayer);
+            }
+        });
+
+        document.getElementById('chk-satelital').addEventListener('change', function() {
+            if (this.checked) {
+                map.addLayer(satelitalLayer);
+            } else {
+                map.removeLayer(satelitalLayer);
+            }
+        });
+
+        // Mostrar/ocultar la capa GeoJSON
+        document.getElementById('chk-geojson').addEventListener('change', function() {
+            if (this.checked) {
+                map.addLayer(geojsonLayer);  // Añadir la capa al mapa
+            } else {
+                map.removeLayer(geojsonLayer);  // Remover la capa del mapa
+            }
+        });
+
+        // Controlar la opacidad de la capa GeoJSON
+        document.getElementById('opacity-geojson').addEventListener('input', function() {
+            geojsonLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
+        });
+
+        // Controlar la opacidad de las capas con los sliders
+        document.getElementById('opacity-riesgos').addEventListener('input', function() {
+            riesgosLayer.setOpacity(this.value);
+        });
+
+        document.getElementById('opacity-satelital').addEventListener('input', function() {
+            satelitalLayer.setOpacity(this.value);
+        });
+
+        // Controles personalizados de zoom y otros
+        document.getElementById('zoom-in').addEventListener('click', function() {
+            map.zoomIn();
+        });
+
+        document.getElementById('zoom-out').addEventListener('click', function() {
+            map.zoomOut();
+        });
+
+        document.getElementById('fullscreen').addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                document.getElementById('map-container').requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        document.getElementById('geolocate').addEventListener('click', function() {
+            map.locate({ setView: true, maxZoom: 16 });
+        });
+
+        document.getElementById('share').addEventListener('click', function() {
+            alert("Función para compartir el mapa");
+        });
+
+        document.getElementById('bookmark').addEventListener('click', function() {
+            var marker = L.marker(map.getCenter()).addTo(map);
+            alert("Marcador añadido en el centro del mapa");
+        });
+
+        document.getElementById('custom-hand').addEventListener('click', function() {
+            alert("Función personalizada activada");
+        });
+
+        document.getElementById('kml').addEventListener('click', function() {
+            alert("Función para cargar un archivo KML");
+        });
+
+        // JavaScript para colapsar/expandir el control de capas
+        document.getElementById('toggle-layer-control').addEventListener('click', function() {
+            const layerControls = document.getElementById('layer-controls');
+            if (layerControls.style.display === 'none' || layerControls.style.display === '') {
+                layerControls.style.display = 'block';
+            } else {
+                layerControls.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+
+</html>
