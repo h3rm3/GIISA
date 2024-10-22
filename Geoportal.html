@@ -143,39 +143,54 @@
         }
 
         /* Responsividad para pantallas pequeñas */
-        @media only screen and (max-width: 600px) {
-            #main-container {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-            }
+@media only screen and (max-width: 600px) {
+    #main-container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
 
-            #map-container {
-                height: 80vh; /* Ajustar el tamaño del mapa en móviles */
-            }
+    #map-container {
+        height: 80vh; /* Ajustar el tamaño del mapa en móviles */
+    }
 
-            .custom-controls button {
-                width: 30px;
-                height: 30px;
-                padding: 8px;
-            }
+    .custom-controls button {
+        width: 30px;
+        height: 30px;
+        padding: 8px;
+    }
 
-            .custom-controls button i {
-                font-size: 14px;
-            }
+    .custom-controls button i {
+        font-size: 12px;
+    }
 
-            .layer-control {
-                width: 180px; /* Ajustar el ancho del panel de capas en móviles */
-            }
+    .layer-control {
+        width: 180px; /* Ajustar el ancho del panel de capas en móviles */
+    }
 
-            .layer-control h5 {
-                font-size: 0.9rem;
-            }
+    .layer-control h5 {
+        font-size: 0.9rem;
+    }
 
-            .layer-control input[type="range"] {
-                width: 100%;
-            }
-        }
+    .layer-control input[type="range"] {
+        width: 100%;
+    }
+
+    /* Ajustes del footer en móviles */
+    footer {
+        padding: 5px; /* Reducir el padding en dispositivos móviles */
+        font-size: 12px; /* Reducir el tamaño de la fuente en dispositivos móviles */
+    }
+
+    footer p {
+        margin: 5px 0; /* Reducir el margen de los párrafos dentro del footer */
+    }
+
+    footer a {
+        font-size: 12px; /* Reducir el tamaño de las fuentes de los enlaces */
+    }
+}
+
 
     </style>
 </head>
