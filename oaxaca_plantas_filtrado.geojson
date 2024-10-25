@@ -1,0 +1,2558 @@
+{
+    "type": "FeatureCollection",
+    "name": "agua_plantas_trata_agua_residual_21_xy_p",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "id": 1573,
+            "properties": {
+                "g_id": 1573,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "001",
+                "cvegeomun": "20001",
+                "nom_mun": "ABEJONES",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "001",
+                "cvegeo_municipio": "20001",
+                "nom_municipio": "ABEJONES",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200010001",
+                "nom_localidad": "ABEJONES",
+                "cve_planta": 1856,
+                "nom_planta": "SAN MIGUEL ABEJONES",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 2.0,
+                "caudal": 0.3,
+                "x_long": -96.6067,
+                "y_lat": 17.435
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6067,
+                        17.435
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1574,
+            "properties": {
+                "g_id": 1574,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "010",
+                "cvegeomun": "20010",
+                "nom_mun": "EL BARRIO DE LA SOLEDAD",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "010",
+                "cvegeo_municipio": "20010",
+                "nom_municipio": "EL BARRIO DE LA SOLEDAD",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200100001",
+                "nom_localidad": "EL BARRIO DE LA SOLEDAD",
+                "cve_planta": 587,
+                "nom_planta": "EL BARRIO DE LA SOLEDAD",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 11.0,
+                "caudal": 11.0,
+                "x_long": -95.1122,
+                "y_lat": 16.8039
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.1122,
+                        16.8039
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1575,
+            "properties": {
+                "g_id": 1575,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "019",
+                "cvegeomun": "20019",
+                "nom_mun": "CONCEPCIÓN PÁPALO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "019",
+                "cvegeo_municipio": "20019",
+                "nom_municipio": "CONCEPCIÓN PÁPALO",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200190001",
+                "nom_localidad": "CONCEPCIÓN PÁPALO",
+                "cve_planta": 2596,
+                "nom_planta": "CONCEPCIÓN PÁPALO",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 3.0,
+                "x_long": -96.8806,
+                "y_lat": 17.8417
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.8806,
+                        17.8417
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1576,
+            "properties": {
+                "g_id": 1576,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "030",
+                "cvegeomun": "20030",
+                "nom_mun": "EL ESPINAL",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "030",
+                "cvegeo_municipio": "20030",
+                "nom_municipio": "EL ESPINAL",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200300001",
+                "nom_localidad": "EL ESPINAL",
+                "cve_planta": 1216,
+                "nom_planta": "EL ESPINAL",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 12.0,
+                "caudal": 12.0,
+                "x_long": -95.0417,
+                "y_lat": 16.4847
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.0417,
+                        16.4847
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1577,
+            "properties": {
+                "g_id": 1577,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "039",
+                "cvegeomun": "20039",
+                "nom_mun": "HEROICA CIUDAD DE HUAJUAPAN DE LEÓN",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "039",
+                "cvegeo_municipio": "20039",
+                "nom_municipio": "HEROICA CIUDAD DE HUAJUAPAN DE LEÓN",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200390001",
+                "nom_localidad": "HEROICA CIUDAD DE HUAJUAPAN DE LEÓN",
+                "cve_planta": 589,
+                "nom_planta": "HUAJUAPAN DE LEÓN",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "FILTROS BIOLÓGICOS",
+                "capacidad": 150.0,
+                "caudal": 75.0,
+                "x_long": -97.7761,
+                "y_lat": 17.8047
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.7761,
+                        17.8047
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1578,
+            "properties": {
+                "g_id": 1578,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "042",
+                "cvegeomun": "20042",
+                "nom_mun": "IXTLÁN DE JUÁREZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "042",
+                "cvegeo_municipio": "20042",
+                "nom_municipio": "IXTLÁN DE JUÁREZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200420001",
+                "nom_localidad": "IXTLÁN DE JUÁREZ",
+                "cve_planta": 1863,
+                "nom_planta": "IXTLÁN DE JUÁREZ",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "OTROS",
+                "capacidad": 4.0,
+                "caudal": 3.0,
+                "x_long": -96.4872,
+                "y_lat": 17.3306
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.4872,
+                        17.3306
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1579,
+            "properties": {
+                "g_id": 1579,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "042",
+                "cvegeomun": "20042",
+                "nom_mun": "IXTLÁN DE JUÁREZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "042",
+                "cvegeo_municipio": "20042",
+                "nom_municipio": "IXTLÁN DE JUÁREZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200420001",
+                "nom_localidad": "IXTLÁN DE JUÁREZ",
+                "cve_planta": 3370,
+                "nom_planta": "IXTLÁN",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "OTROS",
+                "capacidad": 3.9,
+                "caudal": 3.9,
+                "x_long": -96.4872,
+                "y_lat": 17.3306
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.4872,
+                        17.3306
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1580,
+            "properties": {
+                "g_id": 1580,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "063",
+                "cvegeomun": "20063",
+                "nom_mun": "NAZARENO ETLA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "063",
+                "cvegeo_municipio": "20063",
+                "nom_municipio": "NAZARENO ETLA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200630001",
+                "nom_localidad": "NAZARENO ETLA",
+                "cve_planta": 1597,
+                "nom_planta": "NAZARENO",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 4.0,
+                "caudal": 4.0,
+                "x_long": -96.8239,
+                "y_lat": 17.1783
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.8239,
+                        17.1783
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1581,
+            "properties": {
+                "g_id": 1581,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "067",
+                "cvegeomun": "20067",
+                "nom_mun": "OAXACA DE JUÁREZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "067",
+                "cvegeo_municipio": "20067",
+                "nom_municipio": "OAXACA DE JUÁREZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200670001",
+                "nom_localidad": "OAXACA DE JUÁREZ",
+                "cve_planta": 591,
+                "nom_planta": "FLORES MAGÓN",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 9.1,
+                "caudal": 9.1,
+                "x_long": -96.72,
+                "y_lat": 17.0678
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.72,
+                        17.0678
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1582,
+            "properties": {
+                "g_id": 1582,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "068",
+                "cvegeomun": "20068",
+                "nom_mun": "OCOTLÁN DE MORELOS",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "068",
+                "cvegeo_municipio": "20068",
+                "nom_municipio": "OCOTLÁN DE MORELOS",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200680001",
+                "nom_localidad": "OCOTLÁN DE MORELOS",
+                "cve_planta": 593,
+                "nom_planta": "OCOTLÁN DE MORELOS",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 14.7,
+                "caudal": 14.7,
+                "x_long": -96.6753,
+                "y_lat": 16.7917
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6753,
+                        16.7917
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1583,
+            "properties": {
+                "g_id": 1583,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "076",
+                "cvegeomun": "20076",
+                "nom_mun": "LA REFORMA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "076",
+                "cvegeo_municipio": "20076",
+                "nom_municipio": "LA REFORMA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200760001",
+                "nom_localidad": "LA REFORMA",
+                "cve_planta": 1596,
+                "nom_planta": "LA REFORMA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 2.0,
+                "x_long": -97.8472,
+                "y_lat": 16.625
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.8472,
+                        16.625
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1584,
+            "properties": {
+                "g_id": 1584,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "079",
+                "cvegeomun": "20079",
+                "nom_mun": "SALINA CRUZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "079",
+                "cvegeo_municipio": "20079",
+                "nom_municipio": "SALINA CRUZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200790001",
+                "nom_localidad": "SALINA CRUZ",
+                "cve_planta": 595,
+                "nom_planta": "AMPLIACIÓN CARLOS G.F.",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 12.0,
+                "caudal": 12.0,
+                "x_long": -95.1958,
+                "y_lat": 16.1825
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.1958,
+                        16.1825
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1585,
+            "properties": {
+                "g_id": 1585,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "079",
+                "cvegeomun": "20079",
+                "nom_mun": "SALINA CRUZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "079",
+                "cvegeo_municipio": "20079",
+                "nom_municipio": "SALINA CRUZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200790001",
+                "nom_localidad": "SALINA CRUZ",
+                "cve_planta": 596,
+                "nom_planta": "U. H. PEMEX",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 14.0,
+                "caudal": 14.0,
+                "x_long": -95.1958,
+                "y_lat": 16.1825
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.1958,
+                        16.1825
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1586,
+            "properties": {
+                "g_id": 1586,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "079",
+                "cvegeomun": "20079",
+                "nom_mun": "SALINA CRUZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "079",
+                "cvegeo_municipio": "20079",
+                "nom_municipio": "SALINA CRUZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200790001",
+                "nom_localidad": "SALINA CRUZ",
+                "cve_planta": 1329,
+                "nom_planta": "SALINA CRUZ I",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 100.0,
+                "caudal": 90.0,
+                "x_long": -95.1958,
+                "y_lat": 16.1825
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.1958,
+                        16.1825
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1587,
+            "properties": {
+                "g_id": 1587,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "079",
+                "cvegeomun": "20079",
+                "nom_mun": "SALINA CRUZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "079",
+                "cvegeo_municipio": "20079",
+                "nom_municipio": "SALINA CRUZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200790001",
+                "nom_localidad": "SALINA CRUZ",
+                "cve_planta": 1330,
+                "nom_planta": "SALINA CRUZ II (REFINERÍA PEMEX)",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 100.0,
+                "caudal": 100.0,
+                "x_long": -95.1958,
+                "y_lat": 16.1825
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.1958,
+                        16.1825
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1588,
+            "properties": {
+                "g_id": 1588,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "091",
+                "cvegeomun": "20091",
+                "nom_mun": "SAN ANDRÉS HUAYÁPAM",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "091",
+                "cvegeo_municipio": "20091",
+                "nom_municipio": "SAN ANDRÉS HUAYÁPAM",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "200910001",
+                "nom_localidad": "SAN ANDRÉS HUAYÁPAM",
+                "cve_planta": 1331,
+                "nom_planta": "SAN ANDRÉS HUAYÁPAM",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.3,
+                "caudal": 3.3,
+                "x_long": -96.665,
+                "y_lat": 17.1017
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.665,
+                        17.1017
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1589,
+            "properties": {
+                "g_id": 1589,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "102",
+                "cvegeomun": "20102",
+                "nom_mun": "SAN ANDRÉS ZAUTLA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "102",
+                "cvegeo_municipio": "20102",
+                "nom_municipio": "SAN ANDRÉS ZAUTLA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "201020001",
+                "nom_localidad": "SAN ANDRÉS ZAUTLA",
+                "cve_planta": 597,
+                "nom_planta": "SAN ANDRÉS ZAUTLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 6.0,
+                "caudal": 6.0,
+                "x_long": -96.8631,
+                "y_lat": 17.1861
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.8631,
+                        17.1861
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1590,
+            "properties": {
+                "g_id": 1590,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "120",
+                "cvegeomun": "20120",
+                "nom_mun": "SAN BARTOLOMÉ ZOOGOCHO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "120",
+                "cvegeo_municipio": "20120",
+                "nom_municipio": "SAN BARTOLOMÉ ZOOGOCHO",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "201200001",
+                "nom_localidad": "SAN BARTOLOMÉ ZOOGOCHO",
+                "cve_planta": 2358,
+                "nom_planta": "SAN BARTOLOMÉ ZOOGOCHO",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "OTROS",
+                "capacidad": 3.0,
+                "caudal": 0.6,
+                "x_long": -96.2433,
+                "y_lat": 17.2375
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.2433,
+                        17.2375
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1591,
+            "properties": {
+                "g_id": 1591,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "124",
+                "cvegeomun": "20124",
+                "nom_mun": "SAN BLAS ATEMPA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "124",
+                "cvegeo_municipio": "20124",
+                "nom_municipio": "SAN BLAS ATEMPA",
+                "cve_localidad": "0017",
+                "cvegeo_localidad": "201240017",
+                "nom_localidad": "SANTA ROSA",
+                "cve_planta": 2095,
+                "nom_planta": "SANTA ROSA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 4.2,
+                "caudal": 3.0,
+                "x_long": -95.1,
+                "y_lat": 16.3139
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.1,
+                        16.3139
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1592,
+            "properties": {
+                "g_id": 1592,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "128",
+                "cvegeomun": "20128",
+                "nom_mun": "SAN CRISTÓBAL LACHIRIOAG",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "128",
+                "cvegeo_municipio": "20128",
+                "nom_municipio": "SAN CRISTÓBAL LACHIRIOAG",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "201280001",
+                "nom_localidad": "SAN CRISTÓBAL LACHIRIOAG",
+                "cve_planta": 2597,
+                "nom_planta": "LACHIRIOAG",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 3.0,
+                "x_long": -96.1653,
+                "y_lat": 17.3347
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.1653,
+                        17.3347
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1593,
+            "properties": {
+                "g_id": 1593,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "184",
+                "cvegeomun": "20184",
+                "nom_mun": "SAN JUAN BAUTISTA TUXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "184",
+                "cvegeo_municipio": "20184",
+                "nom_municipio": "SAN JUAN BAUTISTA TUXTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "201840001",
+                "nom_localidad": "SAN JUAN BAUTISTA TUXTEPEC",
+                "cve_planta": 1335,
+                "nom_planta": "U.H. INGENIO ADOLFO LÓPEZ MATEOS",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 1.0,
+                "caudal": 1.0,
+                "x_long": -96.1239,
+                "y_lat": 18.0861
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.1239,
+                        18.0861
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1594,
+            "properties": {
+                "g_id": 1594,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "192",
+                "cvegeomun": "20192",
+                "nom_mun": "SAN JUAN CHILATECA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "192",
+                "cvegeo_municipio": "20192",
+                "nom_municipio": "SAN JUAN CHILATECA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "201920001",
+                "nom_localidad": "SAN JUAN CHILATECA",
+                "cve_planta": 1220,
+                "nom_planta": "SAN JUAN CHILATECA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LAGUNAS DE ESTABILIZACIÓN",
+                "capacidad": 5.0,
+                "caudal": 4.0,
+                "x_long": -96.6708,
+                "y_lat": 16.8292
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6708,
+                        16.8292
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1595,
+            "properties": {
+                "g_id": 1595,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "227",
+                "cvegeomun": "20227",
+                "nom_mun": "SAN LORENZO CACAOTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "227",
+                "cvegeo_municipio": "20227",
+                "nom_municipio": "SAN LORENZO CACAOTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "202270001",
+                "nom_localidad": "SAN LORENZO CACAOTEPEC",
+                "cve_planta": 4842,
+                "nom_planta": "PLANTA DE TRATAMIENTO DE AGUAS RESIDUALES SAN LORENZO CACAOTEPEC",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 20.0,
+                "caudal": 4.0,
+                "x_long": -96.8019,
+                "y_lat": 17.1294
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.8019,
+                        17.1294
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1596,
+            "properties": {
+                "g_id": 1596,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "233",
+                "cvegeomun": "20233",
+                "nom_mun": "SAN LUCAS QUIAVINÍ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "233",
+                "cvegeo_municipio": "20233",
+                "nom_municipio": "SAN LUCAS QUIAVINÍ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "202330001",
+                "nom_localidad": "SAN LUCAS QUIAVINÍ",
+                "cve_planta": 1598,
+                "nom_planta": "SAN LUCAS",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.5,
+                "caudal": 3.0,
+                "x_long": -96.4689,
+                "y_lat": 16.8986
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.4689,
+                        16.8986
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1597,
+            "properties": {
+                "g_id": 1597,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "237",
+                "cvegeomun": "20237",
+                "nom_mun": "SAN MARCOS ARTEAGA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "237",
+                "cvegeo_municipio": "20237",
+                "nom_municipio": "SAN MARCOS ARTEAGA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "202370001",
+                "nom_localidad": "SAN MARCOS ARTEAGA",
+                "cve_planta": 1215,
+                "nom_planta": "SAN MARCOS ARTEAGA",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "OTROS",
+                "capacidad": 3.0,
+                "caudal": 3.0,
+                "x_long": -97.8597,
+                "y_lat": 17.7194
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.8597,
+                        17.7194
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1598,
+            "properties": {
+                "g_id": 1598,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "247",
+                "cvegeomun": "20247",
+                "nom_mun": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "247",
+                "cvegeo_municipio": "20247",
+                "nom_municipio": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "202470001",
+                "nom_localidad": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_planta": 586,
+                "nom_planta": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "LAGUNAS DE ESTABILIZACIÓN",
+                "capacidad": 2.0,
+                "caudal": 2.0,
+                "x_long": -96.4461,
+                "y_lat": 17.3061
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.4461,
+                        17.3061
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1599,
+            "properties": {
+                "g_id": 1599,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "247",
+                "cvegeomun": "20247",
+                "nom_mun": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "247",
+                "cvegeo_municipio": "20247",
+                "nom_municipio": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "202470001",
+                "nom_localidad": "CAPULÁLPAM DE MÉNDEZ",
+                "cve_planta": 3369,
+                "nom_planta": "CAPULÁLPAM",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "OTROS",
+                "capacidad": 3.6,
+                "caudal": 3.6,
+                "x_long": -96.4461,
+                "y_lat": 17.3061
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.4461,
+                        17.3061
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1600,
+            "properties": {
+                "g_id": 1600,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "298",
+                "cvegeomun": "20298",
+                "nom_mun": "SAN PABLO VILLA DE MITLA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "298",
+                "cvegeo_municipio": "20298",
+                "nom_municipio": "SAN PABLO VILLA DE MITLA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "202980001",
+                "nom_localidad": "SAN PABLO VILLA DE MITLA",
+                "cve_planta": 613,
+                "nom_planta": "VILLA DE MITLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 9.0,
+                "caudal": 4.0,
+                "x_long": -96.3625,
+                "y_lat": 16.9222
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.3625,
+                        16.9222
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1601,
+            "properties": {
+                "g_id": 1601,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "318",
+                "cvegeomun": "20318",
+                "nom_mun": "SAN PEDRO MIXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "318",
+                "cvegeo_municipio": "20318",
+                "nom_municipio": "SAN PEDRO MIXTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203180001",
+                "nom_localidad": "SAN PEDRO MIXTEPEC DISTRITO 22",
+                "cve_planta": 2609,
+                "nom_planta": "SAN PEDRO MIXTEPEC",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 3.0,
+                "x_long": -97.0828,
+                "y_lat": 15.9828
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0828,
+                        15.9828
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1602,
+            "properties": {
+                "g_id": 1602,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "318",
+                "cvegeomun": "20318",
+                "nom_mun": "SAN PEDRO MIXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "318",
+                "cvegeo_municipio": "20318",
+                "nom_municipio": "SAN PEDRO MIXTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203180001",
+                "nom_localidad": "SAN PEDRO MIXTEPEC DISTRITO 22",
+                "cve_planta": 4183,
+                "nom_planta": "SAN PEDRO MIXTEPEC II",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 10.0,
+                "caudal": 10.0,
+                "x_long": -97.0838,
+                "y_lat": 15.9826
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0838,
+                        15.9826
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1603,
+            "properties": {
+                "g_id": 1603,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "318",
+                "cvegeomun": "20318",
+                "nom_mun": "SAN PEDRO MIXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "318",
+                "cvegeo_municipio": "20318",
+                "nom_municipio": "SAN PEDRO MIXTEPEC",
+                "cve_localidad": "0009",
+                "cvegeo_localidad": "203180009",
+                "nom_localidad": "PUERTO ESCONDIDO",
+                "cve_planta": 601,
+                "nom_planta": "PUERTO ESCONDIDO",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 15.0,
+                "caudal": 7.0,
+                "x_long": -97.0717,
+                "y_lat": 15.8619
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0717,
+                        15.8619
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1604,
+            "properties": {
+                "g_id": 1604,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "318",
+                "cvegeomun": "20318",
+                "nom_mun": "SAN PEDRO MIXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "318",
+                "cvegeo_municipio": "20318",
+                "nom_municipio": "SAN PEDRO MIXTEPEC",
+                "cve_localidad": "0009",
+                "cvegeo_localidad": "203180009",
+                "nom_localidad": "PUERTO ESCONDIDO",
+                "cve_planta": 4122,
+                "nom_planta": "BAJOS DE CHILA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 10.0,
+                "caudal": 10.0,
+                "x_long": -97.0713,
+                "y_lat": 15.8625
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0713,
+                        15.8625
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1605,
+            "properties": {
+                "g_id": 1605,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "318",
+                "cvegeomun": "20318",
+                "nom_mun": "SAN PEDRO MIXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "318",
+                "cvegeo_municipio": "20318",
+                "nom_municipio": "SAN PEDRO MIXTEPEC",
+                "cve_localidad": "0009",
+                "cvegeo_localidad": "203180009",
+                "nom_localidad": "PUERTO ESCONDIDO",
+                "cve_planta": 4184,
+                "nom_planta": "LA PAROTA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 7.5,
+                "caudal": 7.5,
+                "x_long": -97.0713,
+                "y_lat": 15.8625
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0713,
+                        15.8625
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1606,
+            "properties": {
+                "g_id": 1606,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "318",
+                "cvegeomun": "20318",
+                "nom_mun": "SAN PEDRO MIXTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "318",
+                "cvegeo_municipio": "20318",
+                "nom_municipio": "SAN PEDRO MIXTEPEC",
+                "cve_localidad": "0009",
+                "cvegeo_localidad": "203180009",
+                "nom_localidad": "PUERTO ESCONDIDO",
+                "cve_planta": 4185,
+                "nom_planta": "PUNTA COLORADA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 30.0,
+                "caudal": 30.0,
+                "x_long": -97.0713,
+                "y_lat": 15.8625
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0713,
+                        15.8625
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1607,
+            "properties": {
+                "g_id": 1607,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "325",
+                "cvegeomun": "20325",
+                "nom_mun": "SAN PEDRO QUIATONI",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "325",
+                "cvegeo_municipio": "20325",
+                "nom_municipio": "SAN PEDRO QUIATONI",
+                "cve_localidad": "0039",
+                "cvegeo_localidad": "203250039",
+                "nom_localidad": "LA SOLEDAD SALINAS",
+                "cve_planta": 2243,
+                "nom_planta": "SOLEDAD SALINAS",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "OTROS",
+                "capacidad": 3.9,
+                "caudal": 1.0,
+                "x_long": -95.9986,
+                "y_lat": 16.6603
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.9986,
+                        16.6603
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1608,
+            "properties": {
+                "g_id": 1608,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "334",
+                "cvegeomun": "20334",
+                "nom_mun": "VILLA DE TUTUTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "334",
+                "cvegeo_municipio": "20334",
+                "nom_municipio": "VILLA DE TUTUTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203340001",
+                "nom_localidad": "VILLA DE TUTUTEPEC DE MELCHOR OCAMPO",
+                "cve_planta": 1337,
+                "nom_planta": "VILLA DE TUTUTEPEC DE MELCHOR OCAMPO",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.3,
+                "caudal": 1.0,
+                "x_long": -97.6086,
+                "y_lat": 16.1283
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.6086,
+                        16.1283
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1609,
+            "properties": {
+                "g_id": 1609,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "334",
+                "cvegeomun": "20334",
+                "nom_mun": "VILLA DE TUTUTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "334",
+                "cvegeo_municipio": "20334",
+                "nom_municipio": "VILLA DE TUTUTEPEC",
+                "cve_localidad": "0034",
+                "cvegeo_localidad": "203340034",
+                "nom_localidad": "RÍO GRANDE O PIEDRA PARADA",
+                "cve_planta": 2246,
+                "nom_planta": "RÍO GRANDE",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 11.3,
+                "caudal": 7.0,
+                "x_long": -97.4375,
+                "y_lat": 16.0128
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.4375,
+                        16.0128
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1610,
+            "properties": {
+                "g_id": 1610,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "334",
+                "cvegeomun": "20334",
+                "nom_mun": "VILLA DE TUTUTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "334",
+                "cvegeo_municipio": "20334",
+                "nom_municipio": "VILLA DE TUTUTEPEC",
+                "cve_localidad": "0044",
+                "cvegeo_localidad": "203340044",
+                "nom_localidad": "SANTA ROSA DE LIMA",
+                "cve_planta": 1336,
+                "nom_planta": "SANTA ROSA DE LIMA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.3,
+                "caudal": 3.3,
+                "x_long": -97.6233,
+                "y_lat": 16.0711
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.6233,
+                        16.0711
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1611,
+            "properties": {
+                "g_id": 1611,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "336",
+                "cvegeomun": "20336",
+                "nom_mun": "SAN PEDRO YÓLOX",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "336",
+                "cvegeo_municipio": "20336",
+                "nom_municipio": "SAN PEDRO YÓLOX",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203360001",
+                "nom_localidad": "SAN PEDRO YÓLOX",
+                "cve_planta": 2598,
+                "nom_planta": "SAN PEDRO YÓLOX",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "HUMEDAL",
+                "capacidad": 4.0,
+                "caudal": 3.0,
+                "x_long": -96.5517,
+                "y_lat": 17.5875
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.5517,
+                        17.5875
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1612,
+            "properties": {
+                "g_id": 1612,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "337",
+                "cvegeomun": "20337",
+                "nom_mun": "SAN PEDRO Y SAN PABLO AYUTLA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "337",
+                "cvegeo_municipio": "20337",
+                "nom_municipio": "SAN PEDRO Y SAN PABLO AYUTLA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203370001",
+                "nom_localidad": "SAN PEDRO Y SAN PABLO AYUTLA",
+                "cve_planta": 3371,
+                "nom_planta": "SAN PEDRO Y SAN PABLO AYUTLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 2.71,
+                "caudal": 1.5,
+                "x_long": -96.08,
+                "y_lat": 17.0256
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.08,
+                        17.0256
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1613,
+            "properties": {
+                "g_id": 1613,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "338",
+                "cvegeomun": "20338",
+                "nom_mun": "VILLA DE ETLA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "338",
+                "cvegeo_municipio": "20338",
+                "nom_municipio": "VILLA DE ETLA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203380001",
+                "nom_localidad": "VILLA DE ETLA",
+                "cve_planta": 612,
+                "nom_planta": "VILLA DE ETLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 11.5,
+                "caudal": 9.0,
+                "x_long": -96.8,
+                "y_lat": 17.2075
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.8,
+                        17.2075
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1614,
+            "properties": {
+                "g_id": 1614,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "339",
+                "cvegeomun": "20339",
+                "nom_mun": "SAN PEDRO Y SAN PABLO TEPOSCOLULA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "339",
+                "cvegeo_municipio": "20339",
+                "nom_municipio": "SAN PEDRO Y SAN PABLO TEPOSCOLULA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203390001",
+                "nom_localidad": "SAN PEDRO Y SAN PABLO TEPOSCOLULA",
+                "cve_planta": 594,
+                "nom_planta": "SAN PEDRO Y SAN PABLO TEPOSCOLULA",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "LAGUNAS DE ESTABILIZACIÓN",
+                "capacidad": 6.0,
+                "caudal": 3.0,
+                "x_long": -97.4883,
+                "y_lat": 17.5106
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.4883,
+                        17.5106
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1615,
+            "properties": {
+                "g_id": 1615,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "350",
+                "cvegeomun": "20350",
+                "nom_mun": "SAN SEBASTIÁN TUTLA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "350",
+                "cvegeo_municipio": "20350",
+                "nom_municipio": "SAN SEBASTIÁN TUTLA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203500001",
+                "nom_localidad": "SAN SEBASTIÁN TUTLA",
+                "cve_planta": 602,
+                "nom_planta": "SAN SEBASTIÁN TUTLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 10.0,
+                "caudal": 4.0,
+                "x_long": -96.6722,
+                "y_lat": 17.0597
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6722,
+                        17.0597
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1616,
+            "properties": {
+                "g_id": 1616,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "356",
+                "cvegeomun": "20356",
+                "nom_mun": "SANTA ANA DEL VALLE",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "356",
+                "cvegeo_municipio": "20356",
+                "nom_municipio": "SANTA ANA DEL VALLE",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "203560001",
+                "nom_localidad": "SANTA ANA DEL VALLE",
+                "cve_planta": 1862,
+                "nom_planta": "SANTA ANA DEL VALLE",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 3.0,
+                "x_long": -96.4717,
+                "y_lat": 16.9936
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.4717,
+                        16.9936
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1617,
+            "properties": {
+                "g_id": 1617,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "385",
+                "cvegeomun": "20385",
+                "nom_mun": "SANTA CRUZ XOXOCOTLÁN",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "385",
+                "cvegeo_municipio": "20385",
+                "nom_municipio": "SANTA CRUZ XOXOCOTLÁN",
+                "cve_localidad": "0009",
+                "cvegeo_localidad": "203850009",
+                "nom_localidad": "SAN JUAN BAUTISTA LA RAYA",
+                "cve_planta": 2762,
+                "nom_planta": "LA RAYA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 600.0,
+                "caudal": 300.0,
+                "x_long": -96.7244,
+                "y_lat": 16.9861
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.7244,
+                        16.9861
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1618,
+            "properties": {
+                "g_id": 1618,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "390",
+                "cvegeomun": "20390",
+                "nom_mun": "SANTA LUCÍA DEL CAMINO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "390",
+                "cvegeo_municipio": "20390",
+                "nom_municipio": "SANTA LUCÍA DEL CAMINO",
+                "cve_localidad": "0003",
+                "cvegeo_localidad": "203900003",
+                "nom_localidad": "SAN FRANCISCO TUTLA",
+                "cve_planta": 1333,
+                "nom_planta": "SAN FRANCISCO TUTLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.0,
+                "caudal": 3.0,
+                "x_long": -96.6681,
+                "y_lat": 17.0708
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6681,
+                        17.0708
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1619,
+            "properties": {
+                "g_id": 1619,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "401",
+                "cvegeomun": "20401",
+                "nom_mun": "SANTA MARÍA COLOTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "401",
+                "cvegeo_municipio": "20401",
+                "nom_municipio": "SANTA MARÍA COLOTEPEC",
+                "cve_localidad": "0050",
+                "cvegeo_localidad": "204010050",
+                "nom_localidad": "BRISAS DE ZICATELA",
+                "cve_planta": 4186,
+                "nom_planta": "BRISAS DE ZICATELA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 14.6,
+                "caudal": 14.6,
+                "x_long": -97.0418,
+                "y_lat": 15.8379
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.0418,
+                        15.8379
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1620,
+            "properties": {
+                "g_id": 1620,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "411",
+                "cvegeomun": "20411",
+                "nom_mun": "SANTA MARÍA GUELACÉ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "411",
+                "cvegeo_municipio": "20411",
+                "nom_municipio": "SANTA MARÍA GUELACÉ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "204110001",
+                "nom_localidad": "SANTA MARÍA GUELACÉ",
+                "cve_planta": 2600,
+                "nom_planta": "SANTA MARÍA GUELACÉ",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 3.0,
+                "x_long": -96.6025,
+                "y_lat": 17.0017
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6025,
+                        17.0017
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1621,
+            "properties": {
+                "g_id": 1621,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "413",
+                "cvegeomun": "20413",
+                "nom_mun": "SANTA MARÍA HUATULCO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "413",
+                "cvegeo_municipio": "20413",
+                "nom_municipio": "SANTA MARÍA HUATULCO",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "204130001",
+                "nom_localidad": "SANTA MARÍA HUATULCO",
+                "cve_planta": 607,
+                "nom_planta": "HUATULCO",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 6.0,
+                "caudal": 6.0,
+                "x_long": -96.3222,
+                "y_lat": 15.8342
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.3222,
+                        15.8342
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1622,
+            "properties": {
+                "g_id": 1622,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "413",
+                "cvegeomun": "20413",
+                "nom_mun": "SANTA MARÍA HUATULCO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "413",
+                "cvegeo_municipio": "20413",
+                "nom_municipio": "SANTA MARÍA HUATULCO",
+                "cve_localidad": "0028",
+                "cvegeo_localidad": "204130028",
+                "nom_localidad": "AGUAJE EL ZAPOTE",
+                "cve_planta": 1846,
+                "nom_planta": "BAHÍA CONEJOS",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 20.0,
+                "caudal": 3.0,
+                "x_long": -96.2608,
+                "y_lat": 15.7669
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.2608,
+                        15.7669
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1623,
+            "properties": {
+                "g_id": 1623,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "413",
+                "cvegeomun": "20413",
+                "nom_mun": "SANTA MARÍA HUATULCO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "413",
+                "cvegeo_municipio": "20413",
+                "nom_municipio": "SANTA MARÍA HUATULCO",
+                "cve_localidad": "0095",
+                "cvegeo_localidad": "204130095",
+                "nom_localidad": "TANGOLUNDA",
+                "cve_planta": 608,
+                "nom_planta": "TANGOLUNDA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 60.0,
+                "caudal": 45.0,
+                "x_long": -96.0989,
+                "y_lat": 15.7731
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.0989,
+                        15.7731
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1624,
+            "properties": {
+                "g_id": 1624,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "413",
+                "cvegeomun": "20413",
+                "nom_mun": "SANTA MARÍA HUATULCO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "413",
+                "cvegeo_municipio": "20413",
+                "nom_municipio": "SANTA MARÍA HUATULCO",
+                "cve_localidad": "0114",
+                "cvegeo_localidad": "204130114",
+                "nom_localidad": "ARROYO CHAHUÉ",
+                "cve_planta": 606,
+                "nom_planta": "CHAHUÉ",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 120.0,
+                "caudal": 95.0,
+                "x_long": -96.3222,
+                "y_lat": 15.7892
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.3222,
+                        15.7892
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1625,
+            "properties": {
+                "g_id": 1625,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "413",
+                "cvegeomun": "20413",
+                "nom_mun": "SANTA MARÍA HUATULCO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "413",
+                "cvegeo_municipio": "20413",
+                "nom_municipio": "SANTA MARÍA HUATULCO",
+                "cve_localidad": "0129",
+                "cvegeo_localidad": "204130129",
+                "nom_localidad": "FRACCIONAMIENTO EL CRUCERO",
+                "cve_planta": 2599,
+                "nom_planta": "EL CRUCERO",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LODOS ACTIVADOS",
+                "capacidad": 5.0,
+                "caudal": 2.0,
+                "x_long": -96.2778,
+                "y_lat": 15.7619
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.2778,
+                        15.7619
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1626,
+            "properties": {
+                "g_id": 1626,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "457",
+                "cvegeomun": "20457",
+                "nom_mun": "SANTIAGO CAMOTLÁN",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "457",
+                "cvegeo_municipio": "20457",
+                "nom_municipio": "SANTIAGO CAMOTLÁN",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "204570001",
+                "nom_localidad": "SANTIAGO CAMOTLÁN",
+                "cve_planta": 1857,
+                "nom_planta": "SANTIAGO CAMOTLÁN",
+                "cve_rha": "X",
+                "nom_rha": "GOLFO CENTRO",
+                "proceso": "HUMEDAL",
+                "capacidad": 1.1,
+                "caudal": 1.0,
+                "x_long": -96.1847,
+                "y_lat": 17.4444
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.1847,
+                        17.4444
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1627,
+            "properties": {
+                "g_id": 1627,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "459",
+                "cvegeomun": "20459",
+                "nom_mun": "VILLA DE SANTIAGO CHAZUMBA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "459",
+                "cvegeo_municipio": "20459",
+                "nom_municipio": "SANTIAGO CHAZUMBA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "204590001",
+                "nom_localidad": "SANTIAGO CHAZUMBA",
+                "cve_planta": 1858,
+                "nom_planta": "SANTIAGO CHAZUMBA",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.9,
+                "caudal": 3.0,
+                "x_long": -97.6806,
+                "y_lat": 18.1889
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.6806,
+                        18.1889
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1628,
+            "properties": {
+                "g_id": 1628,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "462",
+                "cvegeomun": "20462",
+                "nom_mun": "SANTIAGO HUAJOLOTITLÁN",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "462",
+                "cvegeo_municipio": "20462",
+                "nom_municipio": "SANTIAGO HUAJOLOTITLÁN",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "204620001",
+                "nom_localidad": "SANTIAGO HUAJOLOTITLÁN",
+                "cve_planta": 1214,
+                "nom_planta": "SANTIAGO HUAJOLOTITLÁN",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "OTROS",
+                "capacidad": 3.0,
+                "caudal": 3.0,
+                "x_long": -97.7314,
+                "y_lat": 17.8256
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.7314,
+                        17.8256
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1629,
+            "properties": {
+                "g_id": 1629,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "492",
+                "cvegeomun": "20492",
+                "nom_mun": "SANTIAGO TILANTONGO",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "492",
+                "cvegeo_municipio": "20492",
+                "nom_municipio": "SANTIAGO TILANTONGO",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "204920001",
+                "nom_localidad": "SANTIAGO TILANTONGO",
+                "cve_planta": 2602,
+                "nom_planta": "SANTIAGO TILANTONGO",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 2.0,
+                "x_long": -97.3389,
+                "y_lat": 17.2833
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.3389,
+                        17.2833
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1630,
+            "properties": {
+                "g_id": 1630,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "515",
+                "cvegeomun": "20515",
+                "nom_mun": "SANTO DOMINGO TEHUANTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "515",
+                "cvegeo_municipio": "20515",
+                "nom_municipio": "SANTO DOMINGO TEHUANTEPEC",
+                "cve_localidad": "0042",
+                "cvegeo_localidad": "205150042",
+                "nom_localidad": "LA NORIA",
+                "cve_planta": 610,
+                "nom_planta": "FRACC. NORIA DE INFONAVIT",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "BIODISCOS",
+                "capacidad": 15.0,
+                "caudal": 15.0,
+                "x_long": -95.2206,
+                "y_lat": 16.2544
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -95.2206,
+                        16.2544
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1631,
+            "properties": {
+                "g_id": 1631,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "519",
+                "cvegeomun": "20519",
+                "nom_mun": "SANTO DOMINGO TOMALTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "519",
+                "cvegeo_municipio": "20519",
+                "nom_municipio": "SANTO DOMINGO TOMALTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205190001",
+                "nom_localidad": "SANTO DOMINGO TOMALTEPEC",
+                "cve_planta": 1218,
+                "nom_planta": "SANTO DOMINGO TOMALTEPEC",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LAGUNAS DE ESTABILIZACIÓN",
+                "capacidad": 1.0,
+                "caudal": 1.0,
+                "x_long": -96.6228,
+                "y_lat": 17.0606
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6228,
+                        17.0606
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1632,
+            "properties": {
+                "g_id": 1632,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "520",
+                "cvegeomun": "20520",
+                "nom_mun": "SANTO DOMINGO TONALÁ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "520",
+                "cvegeo_municipio": "20520",
+                "nom_municipio": "SANTO DOMINGO TONALÁ",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205200001",
+                "nom_localidad": "SANTO DOMINGO TONALÁ",
+                "cve_planta": 2601,
+                "nom_planta": "SANTO DOMINGO TONALÁ",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "HUMEDAL",
+                "capacidad": 5.0,
+                "caudal": 3.0,
+                "x_long": -97.9625,
+                "y_lat": 17.675
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.9625,
+                        17.675
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1633,
+            "properties": {
+                "g_id": 1633,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "520",
+                "cvegeomun": "20520",
+                "nom_mun": "SANTO DOMINGO TONALÁ",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "520",
+                "cvegeo_municipio": "20520",
+                "nom_municipio": "SANTO DOMINGO TONALÁ",
+                "cve_localidad": "0007",
+                "cvegeo_localidad": "205200007",
+                "nom_localidad": "YETLA DE JUÁREZ",
+                "cve_planta": 2023,
+                "nom_planta": "YETLA DE JUÁREZ",
+                "cve_rha": "IV",
+                "nom_rha": "BALSAS",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.0,
+                "caudal": 3.0,
+                "x_long": -97.9892,
+                "y_lat": 17.6647
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -97.9892,
+                        17.6647
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1634,
+            "properties": {
+                "g_id": 1634,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "531",
+                "cvegeomun": "20531",
+                "nom_mun": "SANTO TOMÁS MAZALTEPEC",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "531",
+                "cvegeo_municipio": "20531",
+                "nom_municipio": "SANTO TOMÁS MAZALTEPEC",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205310001",
+                "nom_localidad": "SANTO TOMÁS MAZALTEPEC",
+                "cve_planta": 1221,
+                "nom_planta": "SANTO TOMÁS MAZALTEPEC",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 1.0,
+                "caudal": 1.0,
+                "x_long": -96.8708,
+                "y_lat": 17.1722
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.8708,
+                        17.1722
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1635,
+            "properties": {
+                "g_id": 1635,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "546",
+                "cvegeomun": "20546",
+                "nom_mun": "TEOTITLÁN DEL VALLE",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "546",
+                "cvegeo_municipio": "20546",
+                "nom_municipio": "TEOTITLÁN DEL VALLE",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205460001",
+                "nom_localidad": "TEOTITLÁN DEL VALLE",
+                "cve_planta": 1334,
+                "nom_planta": "TEOTITLÁN DEL VALLE",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 6.0,
+                "caudal": 6.0,
+                "x_long": -96.52,
+                "y_lat": 17.0292
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.52,
+                        17.0292
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1636,
+            "properties": {
+                "g_id": 1636,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "551",
+                "cvegeomun": "20551",
+                "nom_mun": "TLACOLULA DE MATAMOROS",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "551",
+                "cvegeo_municipio": "20551",
+                "nom_municipio": "TLACOLULA DE MATAMOROS",
+                "cve_localidad": "0005",
+                "cvegeo_localidad": "205510005",
+                "nom_localidad": "SAN MARCOS TLAPAZOLA",
+                "cve_planta": 4847,
+                "nom_planta": "PLANTA DE TRATAMIENTO DE AGUAS RESIDUALES DE SAN MARCOS TLAPAZOLA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 2.86,
+                "caudal": 2.86,
+                "x_long": -96.5236,
+                "y_lat": 16.9111
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.5236,
+                        16.9111
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1637,
+            "properties": {
+                "g_id": 1637,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "553",
+                "cvegeomun": "20553",
+                "nom_mun": "TLALIXTAC DE CABRERA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "553",
+                "cvegeo_municipio": "20553",
+                "nom_municipio": "TLALIXTAC DE CABRERA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205530001",
+                "nom_localidad": "TLALIXTAC DE CABRERA",
+                "cve_planta": 2248,
+                "nom_planta": "TLALIXTAC DE CABRERA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 6.0,
+                "caudal": 3.0,
+                "x_long": -96.6489,
+                "y_lat": 17.0708
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.6489,
+                        17.0708
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1638,
+            "properties": {
+                "g_id": 1638,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "565",
+                "cvegeomun": "20565",
+                "nom_mun": "VILLA DE ZAACHILA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "565",
+                "cvegeo_municipio": "20565",
+                "nom_municipio": "VILLA DE ZAACHILA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205650001",
+                "nom_localidad": "VILLA DE ZAACHILA",
+                "cve_planta": 614,
+                "nom_planta": "ZAACHILA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "LAGUNAS DE ESTABILIZACIÓN",
+                "capacidad": 20.0,
+                "caudal": 20.0,
+                "x_long": -96.75,
+                "y_lat": 16.95
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.75,
+                        16.95
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": 1639,
+            "properties": {
+                "g_id": 1639,
+                "cve_ent": "20",
+                "nom_ent": "OAXACA",
+                "cve_mun": "565",
+                "cvegeomun": "20565",
+                "nom_mun": "VILLA DE ZAACHILA",
+                "cve_entidad": "20",
+                "nom_entidad": "OAXACA",
+                "cve_municipio": "565",
+                "cvegeo_municipio": "20565",
+                "nom_municipio": "VILLA DE ZAACHILA",
+                "cve_localidad": "0001",
+                "cvegeo_localidad": "205650001",
+                "nom_localidad": "VILLA DE ZAACHILA",
+                "cve_planta": 2247,
+                "nom_planta": "TRINIDAD ZAACHILA",
+                "cve_rha": "V",
+                "nom_rha": "PACÍFICO SUR",
+                "proceso": "HUMEDAL",
+                "capacidad": 3.3,
+                "caudal": 2.0,
+                "x_long": -96.75,
+                "y_lat": 16.95
+            },
+            "geometry": {
+                "type": "MultiPoint",
+                "coordinates": [
+                    [
+                        -96.75,
+                        16.95
+                    ]
+                ]
+            }
+        }
+    ]
+}
