@@ -232,188 +232,419 @@
         </div>
     </nav>
 
-    <!-- Contenedor principal con mapa y controles -->
-    <div id="main-container">
-        <div id="map-container">
-            <div id="map"></div>
+<!-- Contenedor principal con mapa y controles -->
+<div id="main-container">
+    <div id="map-container">
+        <div id="map"></div>
 
-            <!-- Controles personalizados a la izquierda -->
-            <div class="custom-controls">
-                <button id="zoom-in"><i class="fas fa-plus"></i></button>
-                <button id="zoom-out"><i class="fas fa-minus"></i></button>
-                <button id="fullscreen"><i class="fas fa-expand"></i></button>
-                <button id="geolocate"><i class="fas fa-map-marker-alt"></i></button>
-                <button id="share"><i class="fas fa-share-alt"></i></button>
-                <button id="bookmark"><i class="fas fa-flag"></i></button>
-                <button id="custom-hand"><i class="fas fa-hand-pointer"></i></button>
-                <button id="kml"><span>KML</span></button>
-            </div>
+        <!-- Controles personalizados a la izquierda -->
+        <div class="custom-controls">
+            <button id="zoom-in"><i class="fas fa-plus"></i></button>
+            <button id="zoom-out"><i class="fas fa-minus"></i></button>
+            <button id="fullscreen"><i class="fas fa-expand"></i></button>
+            <button id="geolocate"><i class="fas fa-map-marker-alt"></i></button>
+            <button id="share"><i class="fas fa-share-alt"></i></button>
+            <button id="bookmark"><i class="fas fa-flag"></i></button>
+            <button id="custom-hand"><i class="fas fa-hand-pointer"></i></button>
+            <input type="file" id="kml-file" accept=".kml" style="display: none;" />
+            <button id="kml"><span>KML</span></button>
+        </div>
 
-            <!-- Filtro de capas con control de opacidad y botón de colapso -->
-            <div id="layer-control-container">
-                <button id="toggle-layer-control" class="toggle-button">
-                    <i class="fas fa-layer-group"></i>
-                </button>
-                <div id="layer-controls" class="layer-control">
-                    <h5>Capas de Mapa</h5>
-                    <div class="layer-group">
-                        <label for="chk-riesgos">
-                            <i class="fas fa-exclamation-triangle" style="color: orange;"></i> Riesgos
-                        </label>
-                        <input type="checkbox" id="chk-riesgos">
-                        <input type="range" id="opacity-riesgos" min="0" max="1" step="0.1" value="1">
-                    </div>
-                    <div class="layer-group">
-                        <label for="chk-satelital">
-                            <i class="fas fa-satellite-dish" style="color: blue;"></i> Satelital
-                        </label>
-                        <input type="checkbox" id="chk-satelital">
-                        <input type="range" id="opacity-satelital" min="0" max="1" step="0.1" value="1">
-                    </div>
-                    <!-- Nueva capa GeoJSON -->
-                    <div class="layer-group">
-                        <label for="chk-geojson">
-                            <i class="fas fa-water" style="color: #1E90FF;"></i> RH20Ac
-                        </label>
-                        <input type="checkbox" id="chk-geojson">
-                        <input type="range" id="opacity-geojson" min="0" max="1" step="0.1" value="1">
-                    </div>
+        
+
+        <!-- Filtro de capas con control de opacidad y botón de colapso -->
+        <div id="layer-control-container">
+            <button id="toggle-layer-control" class="toggle-button">
+                <i class="fas fa-layer-group"></i>
+            </button>
+            <div id="layer-controls" class="layer-control">
+                <h5>Capas de Mapa</h5>
+                <div class="layer-group">
+                    <label for="chk-satelital">
+                        <i class="fas fa-satellite-dish" style="color: blue;"></i> Satelital
+                    </label>
+                    <input type="checkbox" id="chk-satelital">
+                    <input type="range" id="opacity-satelital" min="0" max="1" step="0.1" value="1">
+                </div>
+                <!-- Nueva capa GeoJSON -->
+                <div class="layer-group">
+                    <label for="chk-geojson">
+                        <i class="fas fa-water" style="color: #1E90FF;"></i> RH20Ac
+                    </label>
+                    <input type="checkbox" id="chk-geojson">
+                    <input type="range" id="opacity-geojson" min="0" max="1" step="0.1" value="1">
+                    <p id="info-geojson" style="display: none;">Subcuenca RH20Ac-R.Atoyac-Oaxaca DE Juárez</p>
+                </div>
+                <!-- Nueva capa GeoJSON HCTI Pronaii -->
+                <div class="layer-group">
+                    <label for="chk-geojson-pronaii">
+                        <i class="fas fa-cloud" style="color: #32CD32;"></i> HCTI Pronaii
+                    </label>
+                    <input type="checkbox" id="chk-geojson-pronaii">
+                    <input type="range" id="opacity-geojson-pronaii" min="0" max="1" step="0.1" value="1">
+                    <p id="info-geojson-pronaii" style="display: none;">Pronaii para el conocimiento y gestión en cuencas del ciclo socio-natural del agua para el bien común y la justicia ambiental por municipio a abril 2024</p>
+                </div>
+                <!-- Nueva capa GeoJSON Plantas de Tratamiento de Agua Residual -->
+                <div class="layer-group">
+                    <label for="chk-geojson-plantas">
+                        <i class="fas fa-industry" style="color: #FF6347;"></i> Plantas Tratamiento Agua Residual 2021
+                    </label>
+                    <input type="checkbox" id="chk-geojson-plantas">
+                    <input type="range" id="opacity-geojson-plantas" min="0" max="1" step="0.1" value="1">
+                    <p id="info-geojson-plantas" style="display: none;">Plantas municipales de tratamiento de agua residual 2021</p>
+                </div>
+                <!-- Nueva capa GeoJSON Indicadores de Calidad de Agua Superficial -->
+                <div class="layer-group">
+                    <label for="chk-geojson-calidad-agua">
+                        <i class="fas fa-tint" style="color: #4CAF50;"></i> Indicadores Calidad Agua Superficial 2022
+                    </label>
+                    <input type="checkbox" id="chk-geojson-calidad-agua">
+                    <input type="range" id="opacity-geojson-calidad-agua" min="0" max="1" step="0.1" value="1">
+                    <p id="info-geojson-calidad-agua" style="display: none;">Indicadores de calidad de agua superficial en Oaxaca, 2022</p>
+                </div>
+             <!-- Nueva capa GeoJSON Cuenca Hidrológica Río Atoyac-Salado -->
+                <div class="layer-group">
+                    <label for="chk-geojson-cuenca-atoyac">
+                        <i class="fas fa-stream" style="color: #4682B4;"></i> Cuenca Hidrológica Río Atoyac-Salado 2021
+                    </label>
+                    <input type="checkbox" id="chk-geojson-cuenca-atoyac">
+                    <input type="range" id="opacity-geojson-cuenca-atoyac" min="0" max="1" step="0.1" value="1">
+                    <p id="info-geojson-cuenca-atoyac" style="display: none;">Volumen de disponibilidad de agua superficial (hectómetros cúbicos)</p>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Pie de página -->
-    <footer style="background-color: #622132; color: #fff;">
-        <p>&copy; 2024 Observatorio del Río Atoyac, Oaxaca. Todos los derechos reservados.</p>
-        <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a> | <a href="#">Contacto</a></p>
-    </footer>
+<!-- Pie de página -->
+<footer style="background-color: #622132; color: #fff;">
+    <p>&copy; 2024 Observatorio del Río Atoyac, Oaxaca. Todos los derechos reservados.</p>
+    <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a> | <a href="#">Contacto</a></p>
+</footer>
 
-    <!-- Scripts Bootstrap y Leaflet -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<!-- Scripts Bootstrap y Leaflet -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+<script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+<script>
+    // Inicializar el mapa con Leaflet sin los controles de zoom predeterminados
+    var map = L.map('map', {
+        zoomControl: false,
+        center: [17.0654, -96.7266],
+        zoom: 10
+    });
 
-    <script>
-        // Inicializar el mapa con Leaflet sin los controles de zoom predeterminados
-        var map = L.map('map', {
-            zoomControl: false,
-            center: [17.0654, -96.7266],
-            zoom: 10
-        });
+    // Añadir capa base OpenStreetMap
+    var baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
 
-        // Añadir capa base OpenStreetMap
-        var baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
+    // Crear las capas adicionales
+    var satelitalLayer = L.tileLayer('https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', { opacity: 1 });
 
-        // Crear las capas adicionales
-        var riesgosLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', { opacity: 1 });
-        var satelitalLayer = L.tileLayer('https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', { opacity: 1 });
+    // Crear la capa GeoJSON RH20Ac (inicialmente vacía)
+    var geojsonLayer = L.geoJSON(null, { opacity: 1 });
+    var geojsonLayerLoaded = false;
 
-        // Crear la capa GeoJSON (inicialmente vacía)
-        var geojsonLayer = L.geoJSON(null, { opacity: 1 });
+    // Crear la capa GeoJSON HCTI Pronaii (inicialmente vacía)
+    var geojsonPronaiiLayer = L.geoJSON(null, {
+        opacity: 1,
+        onEachFeature: function (feature, layer) {
+            var popupContent = "<strong>Municipio:</strong> " + feature.properties.nom_mun + "<br>" +
+                "<strong>Pronace:</strong> " + feature.properties.nom_pronace + "<br>" +
+                "<strong>Acciones:</strong> " + feature.properties.acciones;
+            layer.bindPopup(popupContent);
+        }
+    });
+    var geojsonPronaiiLayerLoaded = false;
 
-        // Cargar y añadir el GeoJSON al mapa (solo se agrega si el checkbox está activado)
-        fetch('https://raw.githubusercontent.com/h3rm3/mockup1/refs/heads/main/salida_reproyectada.geojson')
-            .then(response => response.json())
-            .then(data => {
-                geojsonLayer.addData(data);  // Añadir los datos al layer
-                map.fitBounds(geojsonLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON
-            })
-            .catch(error => console.log("Error al cargar el GeoJSON:", error));
+    // Crear la capa GeoJSON Plantas Tratamiento de Agua Residual (inicialmente vacía)
+    var geojsonPlantasLayer = L.geoJSON(null, {
+        opacity: 1,
+        onEachFeature: function (feature, layer) {
+            var popupContent = "<strong>Planta de Tratamiento:</strong> " + feature.properties.nom_mun + "<br>" +
+                "<strong>Descripción:</strong> " + "Plantas municipales de tratamiento de agua residual en el año 2021";
+            layer.bindPopup(popupContent);
+        }
+    });
+    var geojsonPlantasLayerLoaded = false;
 
-        // Añadir los listeners para mostrar/ocultar las capas con los checkboxes
-        document.getElementById('chk-riesgos').addEventListener('change', function() {
-            if (this.checked) {
-                map.addLayer(riesgosLayer);
-            } else {
-                map.removeLayer(riesgosLayer);
+    // Crear la capa GeoJSON Indicadores Calidad de Agua Superficial (inicialmente vacía)
+    var geojsonCalidadAguaLayer = L.geoJSON(null, {
+        pointToLayer: function (feature, latlng) {
+            var color;
+            switch (feature.properties.semaforo) {
+                case "VERDE":
+                    color = "#4CAF50";
+                    break;
+                case "AMARILLO":
+                    color = "#FFEB3B";
+                    break;
+                case "ROJO":
+                    color = "#F44336";
+                    break;
+                default:
+                    color = "#000000";
             }
-        });
+            return L.circleMarker(latlng, {
+                radius: 8,
+                fillColor: color,
+                color: "#000",
+                weight: 1,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+        },
+        onEachFeature: function (feature, layer) {
+            var popupContent = "<strong>Sitio:</strong> " + feature.properties.sitio + "<br>" +
+                "<strong>Municipio:</strong> " + feature.properties.nom_municipio + "<br>" +
+                "<strong>Semáforo:</strong> " + feature.properties.semaforo;
+            layer.bindPopup(popupContent);
+        }
+    });
+    var geojsonCalidadAguaLayerLoaded = false;
 
-        document.getElementById('chk-satelital').addEventListener('change', function() {
-            if (this.checked) {
-                map.addLayer(satelitalLayer);
+    // Crear la capa GeoJSON Cuenca Hidrológica Río Atoyac-Salado (inicialmente vacía)
+    var geojsonCuencaAtoyacLayer = L.geoJSON(null, {
+        style: function (feature) {
+            return {
+                color: "#4682B4",
+                weight: 2,
+                opacity: 1
+            };
+        },
+        onEachFeature: function (feature, layer) {
+            var popupContent = "<strong>Cuenca:</strong> " + feature.properties.nom_cuenca + "<br>" +
+                "<strong>Volumen Disponible:</strong> " + feature.properties.vol_dispo + " hectómetros cúbicos";
+            layer.bindPopup(popupContent);
+        }
+    });
+    var geojsonCuencaAtoyacLayerLoaded = false;
+
+    // Añadir los listeners para mostrar/ocultar las capas con los checkboxes
+    document.getElementById('chk-satelital').addEventListener('change', function() {
+        if (this.checked) {
+            map.addLayer(satelitalLayer);
+        } else {
+            map.removeLayer(satelitalLayer);
+        }
+    });
+
+    // Mostrar/ocultar la capa GeoJSON RH20Ac
+    document.getElementById('chk-geojson').addEventListener('change', function() {
+        var infoGeojson = document.getElementById('info-geojson');
+        if (this.checked) {
+            if (!geojsonLayerLoaded) {
+                fetch('https://raw.githubusercontent.com/h3rm3/mockup1/refs/heads/main/salida_reproyectada.geojson')
+                    .then(response => response.json())
+                    .then(data => {
+                        geojsonLayer.addData(data);  // Añadir los datos al layer
+                        geojsonLayerLoaded = true;
+                        map.addLayer(geojsonLayer);
+                        map.fitBounds(geojsonLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON
+                    })
+                    .catch(error => console.log("Error al cargar el GeoJSON RH20Ac:", error));
             } else {
-                map.removeLayer(satelitalLayer);
+                map.addLayer(geojsonLayer);
             }
-        });
+            infoGeojson.style.display = 'block';
+        } else {
+            map.removeLayer(geojsonLayer);  // Remover la capa del mapa
+            infoGeojson.style.display = 'none';
+        }
+    });
 
-        // Mostrar/ocultar la capa GeoJSON
-        document.getElementById('chk-geojson').addEventListener('change', function() {
-            if (this.checked) {
-                map.addLayer(geojsonLayer);  // Añadir la capa al mapa
+    // Mostrar/ocultar la capa GeoJSON HCTI Pronaii
+    document.getElementById('chk-geojson-pronaii').addEventListener('change', function() {
+        var infoGeojsonPronaii = document.getElementById('info-geojson-pronaii');
+        if (this.checked) {
+            if (!geojsonPronaiiLayerLoaded) {
+                fetch('https://raw.githubusercontent.com/h3rm3/GIISA/refs/heads/main/hcti_pronaii_ciclo_agua_300424_mun_p.geojson')
+                    .then(response => response.json())
+                    .then(data => {
+                        geojsonPronaiiLayer.addData(data);  // Añadir los datos al layer
+                        geojsonPronaiiLayerLoaded = true;
+                        map.addLayer(geojsonPronaiiLayer);
+                        map.fitBounds(geojsonPronaiiLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON Pronaii
+                    })
+                    .catch(error => console.log("Error al cargar el GeoJSON HCTI Pronaii:", error));
             } else {
-                map.removeLayer(geojsonLayer);  // Remover la capa del mapa
+                map.addLayer(geojsonPronaiiLayer);
             }
-        });
+            infoGeojsonPronaii.style.display = 'block';
+        } else {
+            map.removeLayer(geojsonPronaiiLayer);  // Remover la capa del mapa
+            infoGeojsonPronaii.style.display = 'none';
+        }
+    });
 
-        // Controlar la opacidad de la capa GeoJSON
-        document.getElementById('opacity-geojson').addEventListener('input', function() {
-            geojsonLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
-        });
-
-        // Controlar la opacidad de las capas con los sliders
-        document.getElementById('opacity-riesgos').addEventListener('input', function() {
-            riesgosLayer.setOpacity(this.value);
-        });
-
-        document.getElementById('opacity-satelital').addEventListener('input', function() {
-            satelitalLayer.setOpacity(this.value);
-        });
-
-        // Controles personalizados de zoom y otros
-        document.getElementById('zoom-in').addEventListener('click', function() {
-            map.zoomIn();
-        });
-
-        document.getElementById('zoom-out').addEventListener('click', function() {
-            map.zoomOut();
-        });
-
-        document.getElementById('fullscreen').addEventListener('click', function() {
-            if (!document.fullscreenElement) {
-                document.getElementById('map-container').requestFullscreen();
+    // Mostrar/ocultar la capa GeoJSON Plantas Tratamiento de Agua Residual
+    document.getElementById('chk-geojson-plantas').addEventListener('change', function() {
+        var infoGeojsonPlantas = document.getElementById('info-geojson-plantas');
+        if (this.checked) {
+            if (!geojsonPlantasLayerLoaded) {
+                fetch('https://raw.githubusercontent.com/h3rm3/GIISA/refs/heads/main/oaxaca_plantas_filtrado.geojson')
+                    .then(response => response.json())
+                    .then(data => {
+                        geojsonPlantasLayer.addData(data);  // Añadir los datos al layer
+                        geojsonPlantasLayerLoaded = true;
+                        map.addLayer(geojsonPlantasLayer);
+                        map.fitBounds(geojsonPlantasLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON Plantas
+                    })
+                    .catch(error => console.log("Error al cargar el GeoJSON Plantas Tratamiento de Agua Residual:", error));
             } else {
-                document.exitFullscreen();
+                map.addLayer(geojsonPlantasLayer);
             }
-        });
+            infoGeojsonPlantas.style.display = 'block';
+        } else {
+            map.removeLayer(geojsonPlantasLayer);  // Remover la capa del mapa
+            infoGeojsonPlantas.style.display = 'none';
+        }
+    });
 
-        document.getElementById('geolocate').addEventListener('click', function() {
-            map.locate({ setView: true, maxZoom: 16 });
-        });
-
-        document.getElementById('share').addEventListener('click', function() {
-            alert("Función para compartir el mapa");
-        });
-
-        document.getElementById('bookmark').addEventListener('click', function() {
-            var marker = L.marker(map.getCenter()).addTo(map);
-            alert("Marcador añadido en el centro del mapa");
-        });
-
-        document.getElementById('custom-hand').addEventListener('click', function() {
-            alert("Función personalizada activada");
-        });
-
-        document.getElementById('kml').addEventListener('click', function() {
-            alert("Función para cargar un archivo KML");
-        });
-
-        // JavaScript para colapsar/expandir el control de capas
-        document.getElementById('toggle-layer-control').addEventListener('click', function() {
-            const layerControls = document.getElementById('layer-controls');
-            if (layerControls.style.display === 'none' || layerControls.style.display === '') {
-                layerControls.style.display = 'block';
+    // Mostrar/ocultar la capa GeoJSON Indicadores Calidad de Agua Superficial
+    document.getElementById('chk-geojson-calidad-agua').addEventListener('change', function() {
+        var infoGeojsonCalidadAgua = document.getElementById('info-geojson-calidad-agua');
+        if (this.checked) {
+            if (!geojsonCalidadAguaLayerLoaded) {
+                fetch('https://raw.githubusercontent.com/h3rm3/GIISA/refs/heads/main/ind_calidad_agua_superf_oaxaca.geojson')
+                    .then(response => response.json())
+                    .then(data => {
+                        geojsonCalidadAguaLayer.addData(data);  // Añadir los datos al layer
+                        geojsonCalidadAguaLayerLoaded = true;
+                        map.addLayer(geojsonCalidadAguaLayer);
+                        map.fitBounds(geojsonCalidadAguaLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON Calidad de Agua
+                    })
+                    .catch(error => console.log("Error al cargar el GeoJSON Calidad de Agua Superficial:", error));
             } else {
-                layerControls.style.display = 'none';
+                map.addLayer(geojsonCalidadAguaLayer);
             }
-        });
-    </script>
+            infoGeojsonCalidadAgua.style.display = 'block';
+        } else {
+            map.removeLayer(geojsonCalidadAguaLayer);  // Remover la capa del mapa
+            infoGeojsonCalidadAgua.style.display = 'none';
+        }
+    });
 
-</body>
+    // Mostrar/ocultar la capa GeoJSON Cuenca Hidrológica Río Atoyac-Salado
+    document.getElementById('chk-geojson-cuenca-atoyac').addEventListener('change', function() {
+        var infoGeojsonCuencaAtoyac = document.getElementById('info-geojson-cuenca-atoyac');
+        if (this.checked) {
+            if (!geojsonCuencaAtoyacLayerLoaded) {
+                fetch('https://raw.githubusercontent.com/h3rm3/GIISA/refs/heads/main/cuenca_hidrologica_R%C3%ADoAtoyac-Salado.geojson')
+                    .then(response => response.json())
+                    .then(data => {
+                        geojsonCuencaAtoyacLayer.addData(data);  // Añadir los datos al layer
+                        geojsonCuencaAtoyacLayerLoaded = true;
+                        map.addLayer(geojsonCuencaAtoyacLayer);
+                        map.fitBounds(geojsonCuencaAtoyacLayer.getBounds());  // Ajustar el mapa a los límites de la capa GeoJSON Cuenca Atoyac
+                    })
+                    .catch(error => console.log("Error al cargar el GeoJSON Cuenca Hidrológica Río Atoyac-Salado:", error));
+            } else {
+                map.addLayer(geojsonCuencaAtoyacLayer);
+            }
+            infoGeojsonCuencaAtoyac.style.display = 'block';
+        } else {
+            map.removeLayer(geojsonCuencaAtoyacLayer);  // Remover la capa del mapa
+            infoGeojsonCuencaAtoyac.style.display = 'none';
+        }
+    });
+
+    // Controlar la opacidad de la capa GeoJSON RH20Ac
+    document.getElementById('opacity-geojson').addEventListener('input', function() {
+        geojsonLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
+    });
+
+    // Controlar la opacidad de la capa GeoJSON HCTI Pronaii
+    document.getElementById('opacity-geojson-pronaii').addEventListener('input', function() {
+        geojsonPronaiiLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
+    });
+
+    // Controlar la opacidad de la capa GeoJSON Plantas Tratamiento de Agua Residual
+    document.getElementById('opacity-geojson-plantas').addEventListener('input', function() {
+        geojsonPlantasLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
+    });
+
+    // Controlar la opacidad de la capa GeoJSON Indicadores Calidad de Agua Superficial
+    document.getElementById('opacity-geojson-calidad-agua').addEventListener('input', function() {
+        geojsonCalidadAguaLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
+    });
+
+    // Controlar la opacidad de la capa GeoJSON Cuenca Hidrológica Río Atoyac-Salado
+    document.getElementById('opacity-geojson-cuenca-atoyac').addEventListener('input', function() {
+        geojsonCuencaAtoyacLayer.setStyle({ opacity: this.value });  // Ajustar la opacidad
+    });
+
+    // Controlar la opacidad de las capas con los sliders
+    document.getElementById('opacity-satelital').addEventListener('input', function() {
+        satelitalLayer.setOpacity(this.value);
+    });
+
+    // Controles personalizados de zoom y otros
+    document.getElementById('zoom-in').addEventListener('click', function() {
+        map.zoomIn();
+    });
+
+    document.getElementById('zoom-out').addEventListener('click', function() {
+        map.zoomOut();
+    });
+
+    document.getElementById('fullscreen').addEventListener('click', function() {
+        if (!document.fullscreenElement) {
+            document.getElementById('map-container').requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    });
+
+    document.getElementById('geolocate').addEventListener('click', function() {
+        map.locate({ setView: true, maxZoom: 16 });
+    });
+
+    document.getElementById('share').addEventListener('click', function() {
+        alert("Función para compartir el mapa");
+    });
+
+    document.getElementById('bookmark').addEventListener('click', function() {
+        var marker = L.marker(map.getCenter()).addTo(map);
+        alert("Marcador añadido en el centro del mapa");
+    });
+
+    document.getElementById('custom-hand').addEventListener('click', function() {
+        alert("Función personalizada activada");
+    });
+
+    document.getElementById('kml').addEventListener('click', function() {
+        document.getElementById('kml-file').click();
+    });
+
+    document.getElementById('kml-file').addEventListener('change', function(event) {
+        var file = event.target.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                var kmlText = e.target.result;
+                var kmlLayer = omnivore.kml.parse(kmlText).on('ready', function() {
+                    map.fitBounds(kmlLayer.getBounds());  // Ajustar el mapa a los límites de la capa KML
+                }).addTo(map);
+            };
+            reader.readAsText(file);
+        }
+    });
+
+    // JavaScript para colapsar/expandir el control de capas
+    document.getElementById('toggle-layer-control').addEventListener('click', function() {
+        const layerControls = document.getElementById('layer-controls');
+        if (layerControls.style.display === 'none' || layerControls.style.display === '') {
+            layerControls.style.display = 'block';
+        } else {
+            layerControls.style.display = 'none';
+        }
+    });
+</script>
+
 
 </html>
