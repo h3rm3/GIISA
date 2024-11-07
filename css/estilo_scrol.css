@@ -15,8 +15,8 @@
   background-color: var(--background-color);
   z-index: 1;
   position: fixed; /* Posición fija */
-  top: 5vh; /* Por defecto se ubica en la parte superior */
-  right: 10vw; /* Espacio desde la derecha */
+  top: 40vh; /* Por defecto se ubica en la parte superior */
+  right: 0vw; /* Espacio desde la derecha */
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
