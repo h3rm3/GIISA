@@ -6,70 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIISA - Grupo de Investigación e Incidencia Socioambiental</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
 
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-           .navbar {
-    background-color: #622132; color: #fff;}
-
-
-
-        .navbar-brand,
-        .nav-link {
-            color: #fff !important;
-        }
-
-        .dropdown-item {
-            color: #000 !important;
-        }
-
-        .nav-link:hover,
-        .dropdown-item:hover {
-            background-color: #333;
-            color: #fff !important;
-        }
-
-        h1, h2, h3 {
-            color: #622132;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .section-header {
-            padding: 20px;
-            border-bottom: 2px solid #622132;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            margin-top: 20px;
-            padding-bottom: 40px;
-        }
-
-        /* Footer styling */
-        .footer {
-            background-color: #4b1624;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .footer a:hover {
-            color: #ddd;
-        }
+        
 
         /* Custom button styles */
         .btn-primary {
@@ -82,39 +24,6 @@
             border-color: #4b1624;
         }
 
-    
-
-        .content-wrapper {
-            min-height: calc(100vh - 140px); /* Adjust for footer height */
-        }
-
- .impact-icon {
-        transition: transform 0.3s ease-in-out;
-    }
-    .impact-icon:hover {
-        transform: scale(1.2);
-    }
-
-    /* Animaciones de los testimonios */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeIn 1s forwards;
-    }
-
-    @keyframes fadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Estilo del contador */
-    .counter {
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-/*Estilo quienes somos*/
         .profile-card {
             background-color: #fff;
             border-radius: 15px;
@@ -122,6 +31,7 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
+            position: relative;
         }
 
         .profile-card:hover {
@@ -134,12 +44,18 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 15px;
+            cursor: pointer;
         }
 
         .profile-card h5 {
-            color: #333;
+            color: #0056b3;
             font-weight: bold;
             margin-bottom: 10px;
+        }
+
+        .profile-card h5 a {
+            color: #0056b3;
+            text-decoration: none;
         }
 
         .profile-card p {
@@ -163,20 +79,25 @@
             margin-bottom: 60px;
         }
 
+        .modal-body img {
+            border-radius: 50%;
+            object-fit: cover;
+            width: 150px;
+            height: 150px;
+            display: block;
+            margin: 0 auto 15px;
+        }
+
         @media (min-width: 768px) {
             .profile-grid .col-md-4 {
                 margin-bottom: 40px;
             }
         }
-
-        
-
     </style>
-
-
 </head>
 
-<body>
+<body style="padding-top: 70px;">
+
 
 <!-- Menú de navegación mejorado con ajustes de legibilidad -->
 <nav class="navbar navbar-expand-lg navbar-dark"  aria-label="GIISA Navigation Bar">
@@ -203,38 +124,29 @@
                     <a class="nav-link dropdown-toggle" href="#" id="pronaaiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-book-fill me-1"></i>PRONAII
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="pronaaiDropdown">
-                        <li><a class="dropdown-item "  href="pronai1.html"><i class="bi bi-journal me-1"></i>PRONAII 1 - Dra.  Alejandra Rojas Olivos</a></li>
-                        <li><a class="dropdown-item" href="pronai2.html"><i class="bi bi-journal me-1"></i>PRONAII 2 - Dra. Dominique Rivas Ponce</a></li>
-                        <li><a class="dropdown-item" href="pronai3.html"><i class="bi bi-journal me-1"></i>PRONAII 3 - Dr.  Fernando Gumeta Gómez</a></li>
-                        <li><a class="dropdown-item" href="pronai4.html"><i class="bi bi-journal me-1"></i>PRONAII 4 - Dr. Guillermo Núñez Mojica</a></li>
+                     <ul class="dropdown-menu" aria-labelledby="pronaaiDropdown">
+                        <li><a class="dropdown-item "  href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 1</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 2</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 3</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 4</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="otros_proyectos.html">
+                    <a class="nav-link" href="Enconstruccion.html">
                         <i class="bi bi-diagram-3-fill me-1"></i>Otros Proyectos
                     </a>
                 </li>
-                <li class="nav-item dropdown">
+                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="observatorioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="bi bi-globe2 me-1"></i>Observatorio
                     </a>
-          <ul class="dropdown-menu" aria-labelledby="observatorioDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="observatorioDropdown">
                         <li><a class="dropdown-item" href="Geoportal.html"><i class="bi bi-map-fill me-1"></i>Geoportal</a></li>
                         <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-folder-fill me-1"></i>Repositorio</a></li>
-                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-exclamation-circle-fill me-1"></i>Denuncias</a></li>
+                      
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Enconstruccion.html">
-                        <i class="fas fa-traffic-light me-1"></i>Semáforo
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Enconstruccion.html">
-                        <i class="bi bi-bell-fill me-1"></i>Alerta Temprana
-                    </a>
-                </li>
+           
             </ul>
 
             <!-- Caja de búsqueda ajustada -->
@@ -249,160 +161,129 @@
 </nav>
 
 
-
-
-
     <h1>Nuestro Equipo</h1>
-    <p class="intro-text">
-        Conoce a nuestro equipo de trabajo, un grupo interdisciplinario de expertos comprometidos con la investigación y la restauración ambiental. Juntos, lideramos iniciativas clave para preservar y restaurar la subcuenca del río Atoyac-Salado, integrando la participación ciudadana y la ciencia para generar un impacto positivo en la región.
+    Nuestro equipo está compuesto por profesionales apasionados y altamente capacitados que combinan experiencia técnica y conocimiento interdisciplinario para enfrentar los desafíos ambientales. Con su compromiso hacia la investigación y la restauración del medio ambiente, buscan generar un impacto positivo y sostenible en la región.
     </p>
 
-
-<!-- Grid de Participantes -->
-<div class="container profile-grid">
-    <!-- Primer equipo -->
-    <h3>Equipo 1</h3>
-    <div class="row">
-        <!-- Dra. Alejandra Rojas Olivos -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/alejandra_olivos.jpeg" alt="Dra. Alejandra Rojas Olivos">
-                <h5>Dra. Alejandra Rojas Olivos</h5>
-                <p>Responsable Técnico. Experta en consultoría ambiental y análisis de laboratorio.</p>
+    <!-- Grid de Participantes -->
+    <div class="container profile-grid">
+        <div class="row">
+            <!-- Director -->
+            <div class="col-md-4">
+                <div class="profile-card">
+                    <img src="img/equipo/baldomero_zarate.jpg" alt="Dr. Baldomero Zárate Nicolás" data-bs-toggle="modal" data-bs-target="#modalBaldomero">
+                    <h5><a href="baldomero_page.html">Dr. Baldomero Zárate Nicolás</a></h5>
+                    <p>Director. Responsable Administrativo del CIIDIR IPN Unidad Oaxaca.</p>
+                </div>
+            </div>
+            <!-- Modal for Baldomero -->
+            <div class="modal fade" id="modalBaldomero">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Dr. Baldomero Zárate Nicolás</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/equipo/baldomero_zarate.jpg" alt="Dr. Baldomero Zárate Nicolás" class="img-fluid mb-3">
+                            <p><strong>Correo electrónico:</strong> baldomezarate@example.com</p>
+                            <p><strong>Líneas de Investigación:</strong></p>
+                            <ul>
+                                <li>Gestión de proyectos de desarrollo regional.</li>
+                                <li>Protección del medio ambiente.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Responsable Técnico -->
+            <div class="col-md-4">
+                <div class="profile-card">
+                    <img src="img/equipo/alejandra_olivos.jpeg" alt="Dra. Alejandra Rojas Olivos" data-bs-toggle="modal" data-bs-target="#modalAlejandra">
+                    <h5><a href="alejandra_page.html">Dra. Alejandra Rojas Olivos</a></h5>
+                    <p>Responsable Técnico. Experta en consultoría ambiental y análisis de laboratorio.</p>
+                </div>
+            </div>
+            <!-- Modal for Alejandra -->
+            <div class="modal fade" id="modalAlejandra">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Dra. Alejandra Rojas Olivos</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/equipo/alejandra_olivos.jpeg" alt="Dra. Alejandra Rojas Olivos" class="img-fluid mb-3">
+                            <p><strong>Correo electrónico:</strong> alejandraolivos@example.com</p>
+                            <p><strong>Líneas de Investigación:</strong></p>
+                            <ul>
+                                <li>Consultoría ambiental.</li>
+                                <li>Análisis de laboratorio para restauración de ecosistemas acuáticos.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Otros Participantes -->
+            <div class="col-md-4">
+                <div class="profile-card">
+                    <img src="img/equipo/Dominique-Ponce.png" alt="Dra. Dominique Rivas Ponce" data-bs-toggle="modal" data-bs-target="#modalDominique">
+                    <h5><a href="dominique_page.html">Dra. Dominique Rivas Ponce</a></h5>
+                    <p>Experta en gobernanza ambiental y conflictos socioambientales.</p>
+                </div>
+            </div>
+            <!-- Modal for Dominique -->
+            <div class="modal fade" id="modalDominique">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Dra. Dominique Rivas Ponce</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="img/equipo/Dominique-Ponce.png" alt="Dra. Dominique Rivas Ponce" class="img-fluid mb-3">
+                            <p><strong>Correo electrónico:</strong> dominiqueponce@example.com</p>
+                            <p><strong>Líneas de Investigación:</strong></p>
+                            <ul>
+                                <li>Gobernanza ambiental.</li>
+                                <li>Conflictos socioambientales y participación ciudadana.</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Dr. Baldomero Zárate Nicolás -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/baldomero_zarate.jpg" alt="Dr. Baldomero Zárate Nicolás">
-                <h5>Dr. Baldomero Zárate Nicolás</h5>
-                <p>Responsable Administrativo. Director del CIIDIR IPN Unidad Oaxaca.</p>
-            </div>
-        </div>
-        <!-- Mtra. Dulce María del Rosario Montaño Hernández y Mtro. Manuel Alonso -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/user.png" alt="Mtra. Dulce María del Rosario Montaño Hernández">
-                <h5>Mtra. Dulce María del Rosario Montaño Hernández</h5>
-                <p>Especialista en análisis de calidad de agua.</p>
-            </div>
-        </div>
+        <!-- Add more team members here -->
     </div>
 
-    <!-- Segundo equipo -->
-    <h3>Equipo 2</h3>
-    <div class="row">
-        <!-- Dra. Dominique Rivas Ponce -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/Dominique-Ponce.png" alt="Dra. Dominique Rivas Ponce">
-                <h5>Dra. Dominique Rivas Ponce</h5>
-                <p>Experta en gobernanza ambiental y conflictos socioambientales.</p>
-            </div>
-        </div>
-        <!-- Mtro. Emmanuel Ramírez Santiago -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/user.png" alt="Mtro. Emmanuel Ramírez Santiago">
-                <h5>Mtro. Emmanuel Ramírez Santiago</h5>
-                <p>Director de la Comisión de Cuenca del Río Atoyac-Salado. Especialista en manejo de cuencas.</p>
-            </div>
-        </div>
-        <!-- Biólogo Raúl Rivera García -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/user.png" alt="Biólogo Raúl Rivera García">
-                <h5>Biólogo Raúl Rivera García</h5>
-                <p>Responsable del Laboratorio de Sistemas de Información Geográfica y Percepción Remota.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Tercer equipo -->
-    <h3>Equipo 3</h3>
-    <div class="row">
-        <!-- Dr. Fernando Gumeta Gómez -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/fernando.jpeg" alt="Dr. Fernando Gumeta Gómez">
-                <h5>Dr. Fernando Gumeta Gómez</h5>
-                <p>Explorador NatGeo. Especialista en manejo integral de cuencas.</p>
-            </div>
-        </div>
-        <!-- Dahlia Del Castillo Trujillo -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/user.png" alt="Dahlia Del Castillo Trujillo">
-                <h5>Dahlia Del Castillo Trujillo</h5>
-                <p>Experta en soluciones basadas en la naturaleza para el tratamiento de aguas residuales.</p>
-            </div>
-        </div>
-        <!-- Dr. Matthias Röss -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/user.png" alt="Dr. Matthias Röss">
-                <h5>Dr. Matthias Röss</h5>
-                <p>Especialista en biodiversidad y macroinvertebrados como bioindicadores de la calidad del agua.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cuarto equipo -->
-    <h3>Equipo 4</h3>
-    <div class="row">
-        <!-- Dr. Guillermo Núñez Mojica -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/guillermo_nunez.jpg" alt="Dr. Guillermo Núñez Mojica">
-                <h5>Dr. Guillermo Núñez Mojica</h5>
-                <p>Especialista en Química Analítica. Participante del PRONACE.</p>
-            </div>
-        </div>
-        <!-- Dra. Jaqueline Loaeza Loaeza -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/jaqueline_loaeza.jpeg" alt="Dra. Jaqueline Loaeza Loaeza">
-                <h5>Dra. Jaqueline Loaeza Loaeza</h5>
-                <p>Especialista en biomarcadores relacionados con el cáncer y contaminantes ambientales.</p>
-            </div>
-        </div>
-        <!-- Dr. Kelvin Saldaña -->
-        <div class="col-md-4">
-            <div class="profile-card">
-                <img src="img/equipo/user.png" alt="Dr. Kelvin Saldaña">
-                <h5>Dr. Kelvin Saldaña</h5>
-                <p>Especialista en toxicología y ciencia aplicada para la salud de trabajadores precarios.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <!-- Pie de página -->
+<!-- Pie de página -->
 
 <footer class="footer-conacyt mt-5 py-4" style="background-color: #622132; color: #fff;">
     <div class="container">
         <div class="row">
             <!-- Información de contacto -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <img src="img/conahcyt-blanco.svg" alt="GIISA" width="200px" height="60px">
-               
                 <p>© 2024 GIISA - Grupo de Investigación e Incidencia Socioambiental. Todos los derechos reservados.</p>
             </div>
 
             <!-- Lo Institucional -->
-            <div class="col-md-4">
-             
-                 <img src="img/logo_ciddir.png"  class="logo"  id="logo_institucion" alt="GIISA" width="60px" height="60px">
-               
+            <div class="col-md-3">
+                <img src="img/logo_ciddir.png" class="logo" id="logo_institucion" alt="GIISA" width="60px" height="60px">
                 <p>Centro Interdisciplinario de Investigación para el Desarrollo Integral Regional, Unidad Oaxaca</p>
-                <p>
-            
-
             </div>
 
             <!-- Redes sociales mejoradas -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h5>Síguenos en</h5>
                 <ul class="list-inline">
                     <li class="list-inline-item">
@@ -427,14 +308,52 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- Contador de visitas -->
+            <div class="col-md-3">
+                <div class="contador">
+                    <h5>Visitas a esta página</h5>
+                    <h1 id="visit-count" class="text-white" >0</h1>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
+<script src="script/contador.js"></script>
 
-<!-- Bootstrap JS and FontAwesome for social icons -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS and FontAwesome for social icons -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
+
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('iucsrsdafw3g');
+</script>
+<!-- End of Async Drift Code -->
 
 </body>
 
