@@ -1,0 +1,89 @@
+:root {
+  --main-color: #622132;
+  --background-color: #f8f9fa;
+  --text-color: #555;
+  --link-color: #622132;
+  --link-hover-color: #44181f;
+}
+
+.scroll-wrapper {
+  width: 20rem; /* Ajusta el ancho para evitar que el contenido se desborde */
+  height: 30rem; /* Establece la altura para controlar el tamaño de la sección */
+  border: 2px solid var(--main-color);
+  margin: 1.25rem auto;
+  background-color: var(--background-color);
+  z-index: 1; /* Asegura que el contenedor de noticias quede detrás del título h1 */
+  position: fixed; /* Mantiene la sección fija en la pantalla */
+  top: 20rem; /* Ajusta la posición para que quede debajo del h1 */
+  right: 1rem; /* Ajusta la posición a la derecha */
+  box-sizing: border-box; /* Asegura que el padding y el borde se tengan en cuenta */
+  overflow-y: auto; /* Permite desplazamiento vertical si el contenido es más grande que el contenedor */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal innecesario */
+  border-radius: 8px; /* Añade bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra para resaltar el contenedor */
+}
+
+.scroll-content {
+  height: auto; /* Permite que la altura se ajuste según el contenido */
+  position: relative;
+  padding: 1rem; /* Mejora la legibilidad con suficiente espaciado */
+}
+
+.activity-item {
+  font-weight: bold;
+  margin-top: 1.25rem;
+}
+
+.activity-item a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease; /* Añade una transición suave para hover */
+}
+
+.activity-item a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color); /* Cambia de color al hacer hover para mejorar la experiencia del usuario */
+}
+
+.activity-meta {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  margin-bottom: 0.625rem;
+}
+
+h1.text-center {
+  background-color: var(--main-color);
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 1.5rem; /* Ajusta el tamaño de fuente */
+  margin: 0; /* Elimina márgenes adicionales para mantener todo alineado */
+  text-align: center; /* Centra el texto */
+  position: relative;
+  z-index: 10; /* Asegura que el título quede siempre por encima del contenido de noticias */
+  box-sizing: border-box; /* Asegura que el padding se considere dentro del ancho */
+  border-radius: 8px 8px 0 0; /* Añade bordes redondeados en la parte superior */
+}
+
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #622132;
+  color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  z-index: 20;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #44181f; /* Cambio de color al hacer hover */
+}

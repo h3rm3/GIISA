@@ -1,0 +1,103 @@
+body, html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #622132;
+    color: #fff;
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    background-color: #333;
+    color: #fff !important;
+}
+
+.dropdown-item {
+    color: #000 !important;
+}
+
+h1, h2, h3 {
+    color: #622132;
+    margin-top: 20px;
+     text-align: center;
+}
+
+.section-header {
+    padding: 20px;
+    border-bottom: 2px solid #622132;
+    margin-bottom: 20px;
+}
+
+.container {
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+
+.footer {
+    background-color: #4b1624;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    color: #ddd;
+}
+
+.btn-primary {
+    background-color: #622132;
+    border-color: #622132;
+}
+
+.btn-primary:hover {
+    background-color: #4b1624;
+    border-color: #4b1624;
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 140px);
+}
+
+.impact-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.impact-icon:hover {
+    transform: scale(1.2);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
