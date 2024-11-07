@@ -48,7 +48,7 @@ html, body {
 /* Controles personalizados */
 .custom-controls {
     position: absolute;
-    top: 80px; /* Alineación mejorada con la barra de navegación */
+    top: 100px; /* Ajustado para evitar solapamiento con el cuadro de búsqueda */
     left: 10px;
     display: flex;
     flex-direction: column;
@@ -173,8 +173,9 @@ html, body {
 .leaflet-control-geosearch {
     position: absolute !important;
     top: 10px; /* Alineado directamente con la barra de navegación */
-    left: 10px;
-    width: calc(100% - 20px); /* Asegura que no se superponga con otros elementos */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Asegura que no se superponga con otros elementos */
     max-width: 400px;
     z-index: 10000;
     font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -299,6 +300,7 @@ html, body {
         display: none !important;
     }
 } 
+
 
 </style>
 
