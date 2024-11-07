@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIISA - Grupo de Investigación e Incidencia Socioambiental</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="css/estilo.css">
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ <style>
+    .folder-card {
+      transition: transform 0.3s;
+    }
+
+    .folder-card:hover {
+      transform: scale(1.05);
+    }
+
+    .folder-icon {
+      font-size: 50px;
+      color: #0d6efd;
+    }
+  </style>
+
+</head>
+
+<body style="padding-top: 70px;">
+
+<!-- Menú de navegación mejorado con ajustes de legibilidad -->
+<nav class="navbar navbar-expand-lg navbar-dark"  aria-label="GIISA Navigation Bar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-droplet-fill me-2"></i>GIISA
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="font-size: 1.1rem;"> <!-- Tamaño de letra ajustado -->
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="index.html">
+                        <i class="bi bi-house-door-fill me-1"></i>Página Principal
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="Quienessomos.html">
+                        <i class="bi bi-people-fill me-1"></i>Quienes Somos
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="pronaaiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-book-fill me-1"></i>PRONAII
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="pronaaiDropdown">
+                        <li><a class="dropdown-item "  href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 1</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 2</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 3</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 4</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Enconstruccion.html">
+                        <i class="bi bi-diagram-3-fill me-1"></i>Otros Proyectos
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="observatorioDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-globe2 me-1"></i>Observatorio
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="observatorioDropdown">
+                        <li><a class="dropdown-item" href="Geoportal.html"><i class="bi bi-map-fill me-1"></i>Geoportal</a></li>
+                        <li><a class="dropdown-item" href="repositorio.html"><i class="bi bi-folder-fill me-1"></i>Repositorio</a></li>
+                   
+                    </ul>
+                </li>
+                
+            </ul>
+
+            <!-- Caja de búsqueda ajustada -->
+            <form class="d-flex" role="search" style="max-width: 400px;">
+                <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-light btn-sm" type="submit">
+                    <i class="fas fa-search me-1"></i>Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Sección de Documentos Ambientales como Datos Abiertos con filtros de búsqueda y paginación -->
+<section class="container my-5">
+    <h1 class="text-center mb-4">Documentos Ambientales - Datos Abiertos</h1>
+    <p class="text-center mb-5" style="color: #4a4a4a;">Explora y descarga datos abiertos relacionados con el medio ambiente. Los documentos están disponibles en varios formatos como CSV, JSON, y más.</p>
+    <div class="row mb-4">
+        <div class="col-md-6 offset-md-3">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar por título, nombre, autor, formato, o descripción...">
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped" id="documentsTable">
+            <thead>
+                <tr>
+                    <th>Título del documento</th>
+                    <th>Nombre del documento</th>
+                    <th>Autor</th>
+                    <th>Fecha de publicación</th>
+                    <th>Formato</th>
+                    <th>Descripción</th>
+                    <th>Enlace</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Diseño óptimo de una red de monitoreo piezométrica para el sistema acuífero de Valles Centrales de Oaxaca</td>
+                    <td>Tesis</td>
+                    <td>Isela Coral De La Rosa Sarmiento</td>
+                    <td>2010</td>
+                    <td>PDF</td>
+                    <td>En este estudio se propone el diseño de una red óptima de monitoreo piezométrica para el sistema acuífero de Valles Centrales de Oaxaca. Este acuífero es el principal aporte de agua que abastece a la ciudad de Oaxaca y municipios conurbados.</td>
+                    <td><a href="https://drive.google.com/file/d/1kjGV2y5nVZXGtDgyPKYoeJyHwI67_B1k/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Estudio ecológico de la comunidad de peces en la subcuenca río Atoyac-Paso de la Reina, Oaxaca, México</td>
+                    <td>Tesis</td>
+                    <td>Gabriel Isaías Cruz Ruiz</td>
+                    <td>2012</td>
+                    <td>PDF</td>
+                    <td>Este estudio tiene por objetivo determinar la composición, diversidad íctica y analizar qué factores ambientales responsables de la variación de la comunidad de peces en la subcuenca río Atoyac-Paso de la Reina.</td>
+                    <td><a href="https://drive.google.com/file/d/1PwMeeSVFn8BWPaykz-lzOA5721nnYlAd/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Análisis de vulnerabilidad hídrica en la cuenca del Valle de Ocotlán, Oaxaca</td>
+                    <td>Tesis</td>
+                    <td>Martínez Sánchez Alejandra</td>
+                    <td>2014</td>
+                    <td>PDF</td>
+                    <td>El objetivo de este estudio es entender la problemática del agua de la cuenca del Valle de Ocotlán desde un enfoque de vulnerabilidad hídrica a partir de la integración de un índice que incluya parámetros biofísicos, socioculturales y económicos productivos.</td>
+                    <td><a href="https://drive.google.com/file/d/1VBVBd8sEbeiw3rNTQ-ZpEb1D2bAjTy__/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Efectos del cambio climático en la disponibilidad hídrica de la subcuenca Alto Atoyac, Oaxaca, México: Análisis de vulnerabilidad</td>
+                    <td>Tesis</td>
+                    <td>Edwin Antonio Ojeda Olivares</td>
+                    <td>2014</td>
+                    <td>PDF</td>
+                    <td>El presente estudio muestra una alternativa para mapear e identificar los efectos del cambio climático en la disponibilidad hídrica y su grado de afectación de una forma localizada dentro de la subcuenca Alto Atoyac.</td>
+                    <td><a href="https://drive.google.com/file/d/1dlZoCAX6pfiNiy_y6zxvWtlz9wjDTHse/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Gobernanza y gestión local del agua uso doméstico en la subcuenca del río Atoyac, Oaxaca, México</td>
+                    <td>Tesis</td>
+                    <td>Fernando Gumeta Gómez</td>
+                    <td>2015</td>
+                    <td>PDF</td>
+                    <td>En este trabajo se documentó la existencia de regímenes de gobernanza y gestión del agua locales a través de comités de usuarios del agua, en la subcuenca del río Atoyac, Oaxaca; los cuales han solventado problemas de escasez y de inadecuada gestión del recurso por parte de los municipios y el Estado.</td>
+                    <td><a href="https://drive.google.com/file/d/1Z8RI5sG2Hp_R78BlXkD6vAZYRL0-CUMg/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Estimación del presupuesto hidrológico para mantener la funcionalidad de los principales ríos de la cuenca hidrográfica Río Verde Atoyac, en el estado de Oaxaca</td>
+                    <td>Tesis</td>
+                    <td>María Alejandra Zorrilla Domínguez</td>
+                    <td>2016</td>
+                    <td>PDF</td>
+                    <td>En el presente trabajo se examina el régimen natural de caudales de los ríos principales de las cuencas hidrológicas: Atoyac-Salado, Atoyac-Tlapacoyan, Sordo-Yolotepec, Paso de la Reina y Verde, en la cuenca hidrográfica del Río Verde Atoyac (CHRVA), en el estado de Oaxaca.</td>
+                    <td><a href="https://drive.google.com/file/d/1IOPS7a0h88PsExVkHoodd58Tu1SVpvwq/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Caracterización de suelo agrícola mediante tomografía de resistividad eléctrica y análisis fisicoquímico en el municipio de San Antonino Castillo de Velasco, Oaxaca, México</td>
+                    <td>Tesis</td>
+                    <td>Gallardo Castillo Gilberto</td>
+                    <td>2017</td>
+                    <td>PDF</td>
+                    <td>El objetivo de la investigación fue realizar una caracterización por medio de tomografía de resistividad eléctrica en un predio agrícola de la subcuenca, apoyándose con pruebas de laboratorio de suelos para identificar anomalías asociadas a contaminantes de origen agrícola.</td>
+                    <td><a href="https://drive.google.com/file/d/1schax8D0wnMji_mZN1eYnC1cD6eH_yzR/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Caracterización hidrogeoquímica en el acuífero aluvial de la microcuenca de Nazareno, Etla con altas concentraciones de hierro (Fe2+) y manganeso (Mn2+)</td>
+                    <td>Tesis</td>
+                    <td>Diana Teresita Matadamas Ibañez</td>
+                    <td>2018</td>
+                    <td>PDF</td>
+                    <td>El objetivo del presente trabajo es realizar una caracterización y evaluación hidrogeoquímica de la microcuenca de Nazareno Etla, estableciendo los procesos que regulan la distribución, presencia y origen de los elementos hierro (Fe2+) y manganeso (Mn2+), empleando diagramas hidroquímicos y un modelo que describe las especies minerales que los generan.</td>
+                    <td><a href="https://drive.google.com/file/d/1_BbuSzV3V-VQDf_oXsk53LwD-AMOIBIh/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Propuesta de tecnología apropiada para el saneamiento de las aguas residuales unifamiliares en San Sebastián Etla, Oaxaca</td>
+                    <td>Tesis</td>
+                    <td>Edberg Daniel Martínez Jiménez</td>
+                    <td>2018</td>
+                    <td>PDF</td>
+                    <td>El objetivo de este trabajo fue proponer el uso de una tecnología apropiada para contribuir al saneamiento de las aguas residuales unifamiliares en la comunidad de San Sebastián Etla, Oaxaca, México.</td>
+                    <td><a href="https://drive.google.com/file/d/1OoVhDwxcJXT6VLWI0H9mempYdeyQ57tf/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Análisis de indicadores indirectos de disponibilidad y contaminación hídrica, mediante modelado en zonas agrícolas</td>
+                    <td>Tesis</td>
+                    <td>Edwin Antonio Ojeda Olivares</td>
+                    <td>2019</td>
+                    <td>PDF</td>
+                    <td>Este estudio evalúa los principales factores de estrés para la disminución y contaminación del agua, tales como el cambio climático, el crecimiento poblacional y el cambio en el uso del suelo, proponiendo la implementación de dos modelos simples para evaluar el recurso hídrico subterráneo.</td>
+                    <td><a href="https://drive.google.com/file/d/1ELL_ZaiBf3GNsmpQ99ABcm_b61ijmDPu/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Modelación hidrodinámica de la relación acuífero granular y presa ubicada en San Pablo Huitzo, Oaxaca</td>
+                    <td>Tesis</td>
+                    <td>Emmanuel Flores Martínez</td>
+                    <td>2019</td>
+                    <td>PDF</td>
+                    <td>Construir un modelo numérico 3D del sistema acuífero ubicado en la microcuenca Agua Blanca localizado al noreste del municipio San Pablo Huitzo, Oaxaca, para el análisis del funcionamiento del sistema acuífero y su relación con la presa de recarga.</td>
+                    <td><a href="https://drive.google.com/file/d/1veSN4CdDuqlq9OM0wvtSzYxtbXU-088y/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+                <tr>
+                    <td>Alternativas de manejo sustentable para protección de zonas de recarga hídrica dentro de la microcuenca río Jalapilla, San Andrés Ixtlahuaca, Oaxaca</td>
+                    <td>Tesis</td>
+                    <td>Sandra Maribel Reyes Macedo</td>
+                    <td>2021</td>
+                    <td>PDF</td>
+                    <td>Este trabajo surge de una necesidad sentida por los habitantes de San Andrés Ixtlahuaca, quienes en los últimos años han sufrido las consecuencias de la degradación de los recursos naturales en la parte alta del territorio.</td>
+                    <td><a href="https://drive.google.com/file/d/1EqwGCOtgRwoWytE9fUnqkqNKUMsxRMek/view?usp=drive_link" target="_blank"> Ver</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination-container text-center mt-4">
+        <button class="btn btn-outline-secondary" id="prevPage">Anterior</button>
+        <span id="pageNumber" class="mx-3">1</span>
+        <button class="btn btn-outline-secondary" id="nextPage">Siguiente</button>
+    </div>
+</section>
+
+<script>
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        let table = document.getElementById('documentsTable');
+        let rows = table.getElementsByTagName('tr');
+
+        for (let i = 1; i < rows.length; i++) {
+            let cells = rows[i].getElementsByTagName('td');
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].innerText.toLowerCase().includes(input)) {
+                    match = true;
+                    break;
+                }
+            }
+            rows[i].style.display = match ? '' : 'none';
+        }
+    });
+
+    // Paginación
+    const rowsPerPage = 5;
+    let currentPage = 1;
+    const rows = document.querySelectorAll('#documentsTable tbody tr');
+    const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+    function displayPage(page) {
+        let start = (page - 1) * rowsPerPage;
+        let end = start + rowsPerPage;
+        rows.forEach((row, index) => {
+            row.style.display = (index >= start && index < end) ? '' : 'none';
+        });
+        document.getElementById('pageNumber').innerText = page;
+    }
+
+    document.getElementById('prevPage').addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayPage(currentPage);
+        }
+    });
+
+    document.getElementById('nextPage').addEventListener('click', function() {
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayPage(currentPage);
+        }
+    });
+
+    // Mostrar la primera página al cargar
+    displayPage(currentPage);
+</script>
+
+
+<!-- Pie de página -->
+
+<footer class="footer-conacyt mt-5 py-4" style="background-color: #622132; color: #fff;">
+    <div class="container">
+        <div class="row">
+            <!-- Información de contacto -->
+            <div class="col-md-3">
+                <img src="img/conahcyt-blanco.svg" alt="GIISA" width="200px" height="60px">
+                <p>© 2024 GIISA - Grupo de Investigación e Incidencia Socioambiental. Todos los derechos reservados.</p>
+            </div>
+
+            <!-- Lo Institucional -->
+            <div class="col-md-3">
+                <img src="img/logo_ciddir.png" class="logo" id="logo_institucion" alt="GIISA" width="60px" height="60px">
+                <p>Centro Interdisciplinario de Investigación para el Desarrollo Integral Regional, Unidad Oaxaca</p>
+            </div>
+
+            <!-- Redes sociales mejoradas -->
+            <div class="col-md-3">
+                <h5>Síguenos en</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="https://facebook.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://instagram.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://youtube.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contador de visitas -->
+            <div class="col-md-3">
+                <div class="contador">
+                    <h5>Visitas a esta página</h5>
+                    <h1 id="visit-count" class="text-white" >0</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS and FontAwesome for social icons -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('iucsrsdafw3g');
+</script>
+<!-- End of Async Drift Code -->
+
+</body>
+
+</html>
