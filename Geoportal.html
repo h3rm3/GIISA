@@ -13,6 +13,7 @@
 
 
 
+    
     <style>
 /* Estilos generales */
 html, body {
@@ -132,11 +133,12 @@ html, body {
         height: 60vh;
     }
 
-    .leaflet-draw-toolbar {
+    .leaflet-draw-toolbar,
+    .custom-controls {
         left: 5px; /* Ajustar a la izquierda para mejor visibilidad en móviles */
     }
 
-    .leaflet-draw-toolbar a {
+    .leaflet-draw-toolbar a, .custom-controls button {
         width: 30px;
         height: 30px;
         padding: 4px;
@@ -146,10 +148,6 @@ html, body {
     .leaflet-control-geosearch {
         width: 80%;
     }
-
-    .custom-controls {
-        display: none; /* Ocultar controles personalizados en dispositivos móviles */
-    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -157,11 +155,12 @@ html, body {
         height: 50vh;
     }
 
-    .leaflet-draw-toolbar {
+    .leaflet-draw-toolbar,
+    .custom-controls {
         left: 5px; /* Mantener controles accesibles */
     }
 
-    .leaflet-draw-toolbar a {
+    .leaflet-draw-toolbar a, .custom-controls button {
         width: 28px;
         height: 28px;
         padding: 3px;
@@ -180,10 +179,6 @@ html, body {
         height: 40px;
     }
 
-    .custom-controls {
-        display: none; /* Ocultar controles personalizados en dispositivos móviles */
-    }
-
     /* Ocultar controles de zoom en móviles */
     .leaflet-control-zoom {
         display: none !important;
@@ -194,6 +189,8 @@ html, body {
         display: none !important;
     }
 }
+
+
 
 
 
