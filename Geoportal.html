@@ -48,8 +48,8 @@ html, body {
 /* Controles personalizados */
 .custom-controls {
     position: absolute;
-    top: 100px; /* Ajustado para evitar solapamiento con el cuadro de búsqueda */
-    left: 10px;
+    top: 20px;
+    left: 90px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -60,7 +60,7 @@ html, body {
     background-color: white;
     border: none;
     border-radius: 5px;
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     width: 40px;
@@ -169,14 +169,14 @@ html, body {
     z-index: 1000;
 }
 
-/* Cuadro de búsqueda mejorado para dispositivos móviles */
+/* Cuadro de búsqueda centrado */
 .leaflet-control-geosearch {
     position: absolute !important;
-    top: 10px; /* Alineado directamente con la barra de navegación */
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%; /* Asegura que no se superponga con otros elementos */
-    max-width: 400px;
+    width: 400px;
+    max-width: 90%;
     z-index: 10000;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
@@ -242,15 +242,8 @@ html, body {
     }
 
     .toggle-button {
-        width: 35px;
-        height: 35px;
-    }
-
-    .leaflet-draw-toolbar a {
-        width: 35px !important;
-        height: 35px !important;
-        padding: 6px !important;
-        font-size: 16px !important;
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -272,15 +265,8 @@ html, body {
     }
 
     .toggle-button {
-        width: 30px;
-        height: 30px;
-    }
-
-    .leaflet-draw-toolbar a {
-        width: 30px !important;
-        height: 30px !important;
-        padding: 4px !important;
-        font-size: 14px !important;
+        width: 35px;
+        height: 35px;
     }
 
     #logo_mapa {
