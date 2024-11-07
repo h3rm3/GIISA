@@ -14,240 +14,190 @@
 
 
     <style>
-    /* Estilos generales */
-    html, body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-    }
+/* Estilos generales */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-    /* Contenedor principal */
-    #main-container {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-    }
+/* Contenedor principal */
+#main-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden; /* Evitar el desbordamiento */
+}
 
-    /* Mapa a pantalla completa */
-    #map-container {
-        flex: 1;
-        position: relative;
-        height: 100vh; /* Mapa ocupa toda la pantalla */
-        z-index: 1;
-    }
+/* Mapa */
+#map-container {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}
 
-    #map {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-    }
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
 
-    /* Controles personalizados */
-    .custom-controls {
-        position: absolute;
-        top: 20px;
-        left: 90px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        z-index: 1000;
-    }
+/* Controles personalizados */
+.custom-controls {
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
 
-    .custom-controls button {
-        background-color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        cursor: pointer;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.custom-controls button {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .custom-controls button i, .custom-controls button span {
-        font-size: 18px;
-        color: #333;
-    }
+.custom-controls button i, .custom-controls button span {
+    font-size: 18px;
+    color: #333;
+}
 
-    .custom-controls button:hover {
-        background-color: #f0f0f0;
-    }
+.custom-controls button:hover {
+    background-color: #f0f0f0;
+}
 
-    /* Filtros de mapa personalizados */
-    .layer-control {
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 8px; /* Reducir padding */
-        border-radius: 10px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-        width: 300px; /* Ajustar ancho */
-        transition: all 0.3s ease;
-        display: none; /* Oculto por defecto */
-    }
+/* Filtros de mapa personalizados */
+.layer-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    width: 300px;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+}
 
-    #layer-controls {
-        display: none; /* Oculto por defecto */
-    }
+.layer-control.open {
+    display: block;
+    opacity: 1;
+}
 
-    .toggle-button {
-        background-color: white;
-        border: none;
-        border-radius: 30%;
-        padding: 8px; /* Reducir padding */
-        cursor: pointer;
-        
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 1001; /* Asegura que esté encima del mapa */
-    }
+.layer-control.closed {
+    display: none;
+    opacity: 0;
+}
 
-    /* Ajustes de tamaños de texto y elementos del acordeón */
-    .layer-control h5 {
-        font-size: 0.85rem; /* Reducir tamaño de fuente */
-        margin-bottom: 8px;
-        color: #333;
-    }
+#layer-controls {
+    display: none;
+}
 
-    .accordion-header button {
-        font-size: 0.8rem; /* Reducir tamaño de fuente en botones del acordeón */
-        padding: 5px; /* Reducir padding para ocupar menos espacio */
-    }
+.toggle-button {
+    background-color: white;
+    border: none;
+    border-radius: 30%;
+    padding: 8px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+}
 
-    .accordion-body {
-        font-size: 0.8rem; /* Reducir tamaño de fuente en el contenido del acordeón */
-        padding: 6px; /* Reducir padding del cuerpo */
-    }
+/* Ajustes de tamaños de texto y elementos del acordeón */
+.layer-control h5 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #333;
+}
 
-    .layer-control .layer-group {
-        margin-bottom: 8px; /* Reducir espacio entre grupos */
-    }
+.accordion-header button {
+    font-size: 0.8rem;
+    padding: 5px;
+}
 
-    .layer-control input[type="checkbox"] {
-        transform: scale(0.85); /* Reducir tamaño de checkbox */
-        margin-right: 6px; /* Reducir margen entre checkbox y etiqueta */
-    }
+.accordion-body {
+    font-size: 0.8rem;
+    padding: 6px;
+}
 
-    .layer-control input[type="range"] {
-        width: 90%; /* Ajustar el ancho del control de rango */
-        transform: scale(0.85); /* Reducir tamaño del control de rango */
-    }
+.layer-control .layer-group {
+    margin-bottom: 8px;
+}
 
-    /* Responsividad para pantallas pequeñas */
-    @media only screen and (max-width: 600px) {
-        #main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
+.layer-control input[type="checkbox"] {
+    transform: scale(0.85);
+    margin-right: 6px;
+}
 
-        #map-container {
-            height: 80vh; /* Ajustar el tamaño del mapa en móviles */
-        }
+.layer-control input[type="range"] {
+    width: 90%;
+    transform: scale(0.85);
+}
 
-        .custom-controls button {
-            width: 30px;
-            height: 30px;
-            padding: 6px;
-        }
+/* Logo en la parte inferior izquierda del mapa */
+#logo_mapa {
+    position: absolute;
+    bottom: 10px;
+    right: 160px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 2px;
+    z-index: 1000;
+}
 
-        .custom-controls button i {
-            font-size: 12px;
-        }
+/* Cuadro de búsqueda centrado */
+.leaflet-control-geosearch {
+    position: absolute !important;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    max-width: 90%;
+    z-index: 10000;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
 
-        .layer-control {
-            width: 180px; /* Ajustar el ancho del panel de capas en móviles */
-            padding: 6px; /* Reducir padding en móviles */
-        }
-
-        .layer-control h5 {
-            font-size: 0.75rem;
-        }
-
-        .layer-control input[type="range"] {
-            width: 100%;
-        }
-
-        /* Ajustes del footer en móviles */
-        footer {
-            padding: 5px; /* Reducir el padding en dispositivos móviles */
-            font-size: 12px; /* Reducir el tamaño de la fuente en dispositivos móviles */
-        }
-
-        footer p {
-            margin: 5px 0; /* Reducir el margen de los párrafos dentro del footer */
-        }
-
-        footer a {
-            font-size: 12px; /* Reducir el tamaño de las fuentes de los enlaces */
-        }
-    }
-
-
-
-    /* Logo en la parte inferior izquierda del mapa */
-    #logo_mapa {
-        position: absolute;
-        bottom: 10px;  /* Distancia desde el fondo de la ventana del mapa */
-        right: 160px;    /* Distancia desde el borde derecho de la ventana del mapa */
-        border-radius: 50%;  /* Hace que el logo sea redondo */
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);  /* Sombra para darle un poco de estilo */
-        background-color: white;  /* Fondo blanco detrás del logo */
-        padding: 2px;  /* Añadir un poco de espacio alrededor del logo */
-        z-index: 1000; /* Asegura que el logo esté siempre por encima del mapa */
-    }
-
-
-
-    /* Estilos para centrar el cuadro de búsqueda */
-    .leaflet-control-geosearch {
-        position: absolute !important;
-        top: 20px;  /* Ajustar la distancia desde la parte superior */
-        left: 50%;
-        transform: translateX(-50%);  /* Centrar horizontalmente */
-        width: 400px;  /* Puedes ajustar el ancho según tus necesidades */
-
-        max-width: 90%;  /* Asegúrate de que no se haga demasiado grande en pantallas pequeñas */
-        z-index: 10000;  /* Asegura que el buscador esté sobre cualquier otro elemento */
-
-        font-family: 'Helvetica Neue', Arial, sans-serif;
-    }
-
-   
 /* Margen superior para la toolbar */
 .leaflet-draw-toolbar-top,
 .leaflet-draw-toolbar-bottom {
     margin-top: 10px;
 }
 
-/* Margen izquierdo específico para los botones del draw control */
+/* Ajustes para los botones del draw control */
 .leaflet-draw-toolbar a {
-    margin-left: 10px !important; /* Ajusta el valor para que los botones no estén demasiado desplazados hacia la derecha */
-    margin: 10px !important; /* Margen general para separar los botones */
+    margin: 10px !important;
 }
 
-/* Ocultar botones específicos de la barra */
 .leaflet-bar-part.leaflet-bar-part-single {
-    display: none !important;  /* Oculta completamente el botón */
+    display: none !important;
 }
 
-/* Ajustes generales para la barra de herramientas y su contenedor */
 .leaflet-draw-toolbar,
 .leaflet-bar {
-    border: none !important; /* Elimina cualquier borde restante */
-    box-shadow: none !important; /* Elimina cualquier sombra restante */
-    margin: 0 !important; /* Asegura que no haya márgenes que causen el borde */
-    padding: 0 !important; /* Asegura que no haya padding que esté creando el borde */
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* Estilos para los botones del draw control */
 .leaflet-draw-toolbar a, .leaflet-draw-toolbar a:hover {
     background-color: white !important;
     border: none !important;
@@ -262,17 +212,72 @@
     align-items: center !important;
 }
 
-/* Estilos para los íconos de los botones del draw control */
 .leaflet-draw-toolbar a i, .leaflet-draw-toolbar a span {
     font-size: 18px !important;
     color: #333 !important;
 }
 
-/* Efecto hover para los botones del draw control */
 .leaflet-draw-toolbar a:hover {
     background-color: #f0f0f0 !important;
 }
 
+/* Responsividad para pantallas medianas y pequeñas */
+@media only screen and (max-width: 768px) {
+    #map-container {
+        height: 60vh;
+    }
+
+    .custom-controls button {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .layer-control {
+        width: 220px;
+        padding: 10px;
+    }
+
+    .toggle-button {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #map-container {
+        height: 50vh;
+    }
+
+    .custom-controls button {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .layer-control {
+        width: 160px;
+        padding: 8px;
+    }
+
+    .toggle-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    #logo_mapa {
+        bottom: 50px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Ocultar controles de zoom en móviles */
+    .leaflet-control-zoom {
+        display: none !important;
+    }
+} 
 
 
 </style>
