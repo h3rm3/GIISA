@@ -7,26 +7,27 @@
 }
 
 .scroll-wrapper {
-  width: 20rem; /* Ajusta el ancho para evitar que el contenido se desborde */
-  height: 30rem; /* Establece la altura para controlar el tamaño de la sección */
+  width: 90%; /* Ajusta el ancho al 90% para dispositivos móviles */
+  max-width: 20rem; /* Máximo ancho para pantallas más grandes */
+  height: 50vh; /* Usa una altura relativa a la pantalla para mejorar la adaptación */
   border: 2px solid var(--main-color);
-  margin: 1.25rem auto;
+  margin: 1rem auto;
   background-color: var(--background-color);
-  z-index: 1; /* Asegura que el contenedor de noticias quede detrás del título h1 */
-  position: fixed; /* Mantiene la sección fija en la pantalla */
-  top: 20rem; /* Ajusta la posición para que quede debajo del h1 */
-  right: 1rem; /* Ajusta la posición a la derecha */
-  box-sizing: border-box; /* Asegura que el padding y el borde se tengan en cuenta */
-  overflow-y: auto; /* Permite desplazamiento vertical si el contenido es más grande que el contenedor */
-  overflow-x: hidden; /* Evita el desplazamiento horizontal innecesario */
-  border-radius: 8px; /* Añade bordes redondeados */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra para resaltar el contenedor */
+  z-index: 1;
+  position: fixed;
+  top: 10vh; /* Ajusta la posición para que quede visible en la mayoría de las pantallas */
+  right: 1rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-content {
-  height: auto; /* Permite que la altura se ajuste según el contenido */
+  height: auto;
   position: relative;
-  padding: 1rem; /* Mejora la legibilidad con suficiente espaciado */
+  padding: 1rem;
 }
 
 .activity-item {
@@ -37,12 +38,12 @@
 .activity-item a {
   color: var(--link-color);
   text-decoration: none;
-  transition: color 0.3s ease; /* Añade una transición suave para hover */
+  transition: color 0.3s ease;
 }
 
 .activity-item a:hover {
   text-decoration: underline;
-  color: var(--link-hover-color); /* Cambia de color al hacer hover para mejorar la experiencia del usuario */
+  color: var(--link-hover-color);
 }
 
 .activity-meta {
@@ -55,15 +56,14 @@ h1.text-center {
   background-color: var(--main-color);
   color: #ffffff;
   padding: 1rem;
-  font-size: 1.5rem; /* Ajusta el tamaño de fuente */
-  margin: 0; /* Elimina márgenes adicionales para mantener todo alineado */
-  text-align: center; /* Centra el texto */
+  font-size: 1.25rem; /* Ajusta el tamaño de fuente para dispositivos móviles */
+  margin: 0;
+  text-align: center;
   position: relative;
-  z-index: 10; /* Asegura que el título quede siempre por encima del contenido de noticias */
-  box-sizing: border-box; /* Asegura que el padding se considere dentro del ancho */
-  border-radius: 8px 8px 0 0; /* Añade bordes redondeados en la parte superior */
+  z-index: 10;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
 }
-
 
 .close-button {
   position: absolute;
@@ -85,5 +85,28 @@ h1.text-center {
 }
 
 .close-button:hover {
-  background-color: #44181f; /* Cambio de color al hacer hover */
+  background-color: #44181f;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+  .scroll-wrapper {
+    width: 95%; /* Ancho casi completo en pantallas pequeñas */
+    height: 40vh; /* Reduce la altura para evitar ocupar demasiado espacio */
+    top: 5vh; /* Ajusta la posición superior para un mejor ajuste */
+    right: 2.5%; /* Centra el contenedor horizontalmente */
+  }
+
+  h1.text-center {
+    font-size: 1rem; /* Reduce el tamaño de la fuente del título para pantallas pequeñas */
+    padding: 0.75rem; /* Reduce el padding para ajustarse a pantallas pequeñas */
+  }
+
+  .close-button {
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    right: 5px;
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente del botón de cierre */
+  }
 }
