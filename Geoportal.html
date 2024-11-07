@@ -13,7 +13,6 @@
 
 
 
-    
     <style>
 /* Estilos generales */
 html, body {
@@ -49,8 +48,9 @@ html, body {
 /* Controles personalizados */
 .custom-controls {
     position: absolute;
-    top: 100px; /* Ajustado para estar debajo del cuadro de búsqueda */
-    left: 10px; /* Ajustado para mantener los controles visibles en dispositivos móviles */
+    top: 130px; /* Ajustado para estar debajo del cuadro de búsqueda */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -80,14 +80,104 @@ html, body {
     background-color: #f0f0f0;
 }
 
+/* Filtros de mapa personalizados */
+.layer-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    width: 300px;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+}
+
+.layer-control.open {
+    display: block;
+    opacity: 1;
+}
+
+.layer-control.closed {
+    display: none;
+    opacity: 0;
+}
+
+#layer-controls {
+    display: none;
+}
+
+.toggle-button {
+    background-color: white;
+    border: none;
+    border-radius: 30%;
+    padding: 8px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajustes de tamaños de texto y elementos del acordeón */
+.layer-control h5 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.accordion-header button {
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+.accordion-body {
+    font-size: 0.8rem;
+    padding: 6px;
+}
+
+.layer-control .layer-group {
+    margin-bottom: 8px;
+}
+
+.layer-control input[type="checkbox"] {
+    transform: scale(0.85);
+    margin-right: 6px;
+}
+
+.layer-control input[type="range"] {
+    width: 90%;
+    transform: scale(0.85);
+}
+
+/* Logo en la parte inferior izquierda del mapa */
+#logo_mapa {
+    position: absolute;
+    bottom: 10px;
+    right: 160px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    padding: 2px;
+    z-index: 1000;
+}
+
 /* Cuadro de búsqueda centrado */
 .leaflet-control-geosearch {
     position: absolute !important;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
-    max-width: 400px;
+    width: 400px;
+    max-width: 90%;
     z-index: 10000;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
@@ -95,8 +185,9 @@ html, body {
 /* Ajustes para los botones del draw y su posición debajo del cuadro de búsqueda */
 .leaflet-draw-toolbar {
     position: absolute !important;
-    top: 80px !important; /* Ajusta la posición para estar debajo del cuadro de búsqueda */
-    left: 10px; /* Ajustado para mantenerlo visible en móviles */
+    top: 70px !important; /* Ajusta la posición para estar debajo del cuadro de búsqueda */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex !important;
     flex-direction: column !important;
     gap: 5px !important;
@@ -127,15 +218,10 @@ html, body {
     background-color: #f0f0f0 !important;
 }
 
-/* Ajustes responsivos para pantallas medianas y pequeñas */
+/* Responsividad para pantallas medianas y pequeñas */
 @media only screen and (max-width: 768px) {
     #map-container {
         height: 60vh;
-    }
-
-    .leaflet-draw-toolbar,
-    .custom-controls {
-        left: 5px; /* Ajustar a la izquierda para mejor visibilidad en móviles */
     }
 
     .leaflet-draw-toolbar a, .custom-controls button {
@@ -144,10 +230,6 @@ html, body {
         padding: 4px;
         font-size: 12px;
     }
-
-    .leaflet-control-geosearch {
-        width: 80%;
-    }
 }
 
 @media only screen and (max-width: 480px) {
@@ -155,21 +237,11 @@ html, body {
         height: 50vh;
     }
 
-    .leaflet-draw-toolbar,
-    .custom-controls {
-        left: 5px; /* Mantener controles accesibles */
-    }
-
     .leaflet-draw-toolbar a, .custom-controls button {
-        width: 28px;
-        height: 28px;
+        width: 25px;
+        height: 25px;
         padding: 3px;
         font-size: 10px;
-    }
-
-    .leaflet-control-geosearch {
-        width: 80%;
-        top: 15px;
     }
 
     #logo_mapa {
@@ -189,7 +261,6 @@ html, body {
         display: none !important;
     }
 }
-
 
 
 
