@@ -94,8 +94,7 @@ h1.text-center {
   .scroll-wrapper {
     width: 90%; /* Mayor cobertura para pantallas pequeñas */
     height: 25vh; /* Altura aún más pequeña */
-    top:8vh; /* Más cerca del borde superior */
-     /* Ajusta la posición a la derecha */
+    bottom: 0;
   }
 
   h1.text-center {
