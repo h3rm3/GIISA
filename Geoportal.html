@@ -48,11 +48,12 @@ html, body {
 /* Controles personalizados */
 .custom-controls {
     position: absolute;
-    top: 20px;
-    left: 90px;
+    top: 130px; /* Ajustado para estar debajo del cuadro de búsqueda */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     z-index: 1000;
 }
 
@@ -60,18 +61,18 @@ html, body {
     background-color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    padding: 6px; /* Ajuste del padding */
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    width: 40px;
-    height: 40px;
+    width: 35px; /* Tamaño reducido */
+    height: 35px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .custom-controls button i, .custom-controls button span {
-    font-size: 18px;
+    font-size: 14px; /* Tamaño de fuente reducido */
     color: #333;
 }
 
@@ -181,42 +182,35 @@ html, body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Margen superior para la toolbar */
-.leaflet-draw-toolbar-top,
-.leaflet-draw-toolbar-bottom {
-    margin-top: 10px;
+/* Ajustes para los botones del draw y su posición debajo del cuadro de búsqueda */
+.leaflet-draw-toolbar {
+    position: absolute !important;
+    top: 70px !important; /* Ajusta la posición para estar debajo del cuadro de búsqueda */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    z-index: 1000;
 }
 
-/* Ajustes para los botones del draw control */
 .leaflet-draw-toolbar a {
-    margin: 10px !important;
+    margin: 5px !important;
     background-color: white !important;
     border: none !important;
     border-radius: 30% !important;
-    padding: 8px !important;
+    padding: 6px !important;
     cursor: pointer !important;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 35px !important;
+    height: 35px !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 }
 
-.leaflet-bar-part.leaflet-bar-part-single {
-    display: none !important;
-}
-
-.leaflet-draw-toolbar,
-.leaflet-bar {
-    border: none !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
 .leaflet-draw-toolbar a i, .leaflet-draw-toolbar a span {
-    font-size: 18px !important;
+    font-size: 14px !important; /* Tamaño de fuente más pequeño */
     color: #333 !important;
 }
 
@@ -230,20 +224,11 @@ html, body {
         height: 60vh;
     }
 
-    .custom-controls button {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
-    }
-
-    .layer-control {
-        width: 220px;
-        padding: 10px;
-    }
-
-    .toggle-button {
-        width: 40px;
-        height: 40px;
+    .leaflet-draw-toolbar a, .custom-controls button {
+        width: 30px;
+        height: 30px;
+        padding: 4px;
+        font-size: 12px;
     }
 }
 
@@ -252,21 +237,11 @@ html, body {
         height: 50vh;
     }
 
-    .custom-controls button {
-        width: 30px;
-        height: 30px;
-        padding: 4px;
-        font-size: 12px;
-    }
-
-    .layer-control {
-        width: 160px;
-        padding: 8px;
-    }
-
-    .toggle-button {
-        width: 35px;
-        height: 35px;
+    .leaflet-draw-toolbar a, .custom-controls button {
+        width: 25px;
+        height: 25px;
+        padding: 3px;
+        font-size: 10px;
     }
 
     #logo_mapa {
@@ -285,7 +260,8 @@ html, body {
     footer {
         display: none !important;
     }
-} 
+}
+
 
 
 
