@@ -7,10 +7,10 @@
 }
 
 .scroll-wrapper {
-  width: 80vw; /* Ancho del 80% del dispositivo en pantallas más grandes */
+  width: 80vw; /* Ancho del 80% del dispositivo en pantallas grandes */
   max-width: 18rem; /* Limita el ancho máximo en pantallas grandes */
   height: 30vh; /* Altura relativa a la pantalla para ser más pequeño */
-  border: 1px solid var(--main-color); /* Borde reducido para ahorrar espacio */
+  border: 1px solid var(--main-color); /* Borde reducido */
   margin: 1rem auto;
   background-color: var(--background-color);
   z-index: 1;
@@ -89,20 +89,22 @@ h1.text-center {
   background-color: #44181f;
 }
 
-/* Media query para dispositivos móviles (ancho máximo de 400px) */
-@media (max-width: 400px) {
+/* Media query para dispositivos móviles (ancho máximo de 768px) */
+@media (max-width: 768px) {
   .scroll-wrapper {
-    width: 90%; /* Ancho casi completo en pantallas pequeñas */
-    height: 25vh; /* Altura pequeña para ocupar menos espacio */
+    width: 100%; /* Casi todo el ancho de la pantalla para dispositivos móviles */
+    height: 20vh; /* Altura pequeña para no ocupar demasiado espacio */
     bottom: 0; /* Posiciona el contenedor en la parte inferior */
-    right: 5%; /* Añade un margen pequeño desde la derecha */
-    top: auto; /* Elimina la posición superior */
-    margin: 0; /* Elimina el margen para asegurarse de que quede bien alineado */
-    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+    left: 2.5%; /* Centrando el contenedor horizontalmente */
+    right: auto; /* Anula el valor de `right` */
+    top: auto; /* Anula la posición superior */
+    margin: 0; /* Elimina margen para maximizar espacio */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2); /* Sombra en la parte superior para destacarlo */
   }
 
   h1.text-center {
-    font-size: 1rem; /* Reduce aún más el tamaño del título */
+    font-size: 1rem; /* Reduce el tamaño del título */
     padding: 0.3rem; /* Menos padding para ahorrar espacio */
   }
 
