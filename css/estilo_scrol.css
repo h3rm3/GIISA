@@ -95,6 +95,7 @@ h1.text-center {
     width: 90%; /* Mayor cobertura para pantallas pequeñas */
     height: 25vh; /* Altura aún más pequeña */
     bottom: 0;
+    right: 0;
   }
 
   h1.text-center {
