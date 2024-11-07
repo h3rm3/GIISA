@@ -92,10 +92,10 @@ h1.text-center {
 /* Media query para dispositivos muy pequeños */
 @media (max-width: 400px) {
   .scroll-wrapper {
-    width: 90vw; /* Mayor cobertura para pantallas pequeñas */
+    width: 90%; /* Mayor cobertura para pantallas pequeñas */
     height: 25vh; /* Altura aún más pequeña */
-    top: 2vh; /* Más cerca del borde superior */
-    right: 5vw; /* Ajusta la posición a la derecha */
+    top:8vh; /* Más cerca del borde superior */
+     /* Ajusta la posición a la derecha */
   }
 
   h1.text-center {
