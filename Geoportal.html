@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,191 +8,275 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+
+
     <style>
-        /* Estilos generales */
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
+    /* Estilos generales */
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
 
-        /* Contenedor principal */
-        #main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Mapa a pantalla completa */
-        #map-container {
-            flex: 1;
-            position: relative;
-            height: 100vh; /* Mapa ocupa toda la pantalla */
-            z-index: 1;
-        }
-
-        #map {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-        }
-
-        /* Controles personalizados */
-        .custom-controls {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
-        }
-
-        .custom-controls button {
-            background-color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .custom-controls button i, .custom-controls button span {
-            font-size: 18px;
-            color: #333;
-        }
-
-        .custom-controls button:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Filtros de mapa personalizados */
-        .layer-control {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1000;
-            width: 220px;
-            transition: all 0.3s ease;
-            display: none; /* Oculto por defecto */
-        }
-
-        #layer-controls {
-            display: none; /* Oculto por defecto */
-        }
-
-        .toggle-button {
-            background-color: white;
-            border: none;
-            border-radius: 30%;
-            padding: 10px;
-            cursor: pointer;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 1001; /* Asegura que esté encima del mapa */
-        }
-
-        .layer-control h5 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .layer-control .layer-group {
-            margin-bottom: 10px;
-        }
-
-        .layer-control input[type="checkbox"] {
-            margin-right: 10px;
-        }
-
-        .layer-control input[type="range"] {
-            width: 100%;
-        }
-
-        /* Pie de página */
-        footer {
-            background-color: #343a40;
-            color: #ffffff;
-            text-align: center;
-            padding: 10px;
-            position: relative;
-            z-index: 1000;
-            width: 100%;
-        }
-
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #adb5bd;
-        }
-
-        /* Responsividad para pantallas pequeñas */
-@media only screen and (max-width: 600px) {
+    /* Contenedor principal */
     #main-container {
         flex: 1;
         display: flex;
         flex-direction: column;
     }
 
+    /* Mapa a pantalla completa */
     #map-container {
-        height: 80vh; /* Ajustar el tamaño del mapa en móviles */
+        flex: 1;
+        position: relative;
+        height: 100vh; /* Mapa ocupa toda la pantalla */
+        z-index: 1;
+    }
+
+    #map {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    /* Controles personalizados */
+    .custom-controls {
+        position: absolute;
+        top: 20px;
+        left: 90px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 1000;
     }
 
     .custom-controls button {
-        width: 30px;
-        height: 30px;
-        padding: 8px;
+        background-color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .custom-controls button i {
-        font-size: 12px;
+    .custom-controls button i, .custom-controls button span {
+        font-size: 18px;
+        color: #333;
     }
 
+    .custom-controls button:hover {
+        background-color: #f0f0f0;
+    }
+
+    /* Filtros de mapa personalizados */
     .layer-control {
-        width: 180px; /* Ajustar el ancho del panel de capas en móviles */
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 8px; /* Reducir padding */
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        width: 300px; /* Ajustar ancho */
+        transition: all 0.3s ease;
+        display: none; /* Oculto por defecto */
     }
 
+    #layer-controls {
+        display: none; /* Oculto por defecto */
+    }
+
+    .toggle-button {
+        background-color: white;
+        border: none;
+        border-radius: 30%;
+        padding: 8px; /* Reducir padding */
+        cursor: pointer;
+        
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 1001; /* Asegura que esté encima del mapa */
+    }
+
+    /* Ajustes de tamaños de texto y elementos del acordeón */
     .layer-control h5 {
-        font-size: 0.9rem;
+        font-size: 0.85rem; /* Reducir tamaño de fuente */
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .accordion-header button {
+        font-size: 0.8rem; /* Reducir tamaño de fuente en botones del acordeón */
+        padding: 5px; /* Reducir padding para ocupar menos espacio */
+    }
+
+    .accordion-body {
+        font-size: 0.8rem; /* Reducir tamaño de fuente en el contenido del acordeón */
+        padding: 6px; /* Reducir padding del cuerpo */
+    }
+
+    .layer-control .layer-group {
+        margin-bottom: 8px; /* Reducir espacio entre grupos */
+    }
+
+    .layer-control input[type="checkbox"] {
+        transform: scale(0.85); /* Reducir tamaño de checkbox */
+        margin-right: 6px; /* Reducir margen entre checkbox y etiqueta */
     }
 
     .layer-control input[type="range"] {
-        width: 100%;
+        width: 90%; /* Ajustar el ancho del control de rango */
+        transform: scale(0.85); /* Reducir tamaño del control de rango */
     }
 
-    /* Ajustes del footer en móviles */
-    footer {
-        padding: 5px; /* Reducir el padding en dispositivos móviles */
-        font-size: 12px; /* Reducir el tamaño de la fuente en dispositivos móviles */
+    /* Responsividad para pantallas pequeñas */
+    @media only screen and (max-width: 600px) {
+        #main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #map-container {
+            height: 80vh; /* Ajustar el tamaño del mapa en móviles */
+        }
+
+        .custom-controls button {
+            width: 30px;
+            height: 30px;
+            padding: 6px;
+        }
+
+        .custom-controls button i {
+            font-size: 12px;
+        }
+
+        .layer-control {
+            width: 180px; /* Ajustar el ancho del panel de capas en móviles */
+            padding: 6px; /* Reducir padding en móviles */
+        }
+
+        .layer-control h5 {
+            font-size: 0.75rem;
+        }
+
+        .layer-control input[type="range"] {
+            width: 100%;
+        }
+
+        /* Ajustes del footer en móviles */
+        footer {
+            padding: 5px; /* Reducir el padding en dispositivos móviles */
+            font-size: 12px; /* Reducir el tamaño de la fuente en dispositivos móviles */
+        }
+
+        footer p {
+            margin: 5px 0; /* Reducir el margen de los párrafos dentro del footer */
+        }
+
+        footer a {
+            font-size: 12px; /* Reducir el tamaño de las fuentes de los enlaces */
+        }
     }
 
-    footer p {
-        margin: 5px 0; /* Reducir el margen de los párrafos dentro del footer */
+
+
+    /* Logo en la parte inferior izquierda del mapa */
+    #logo_mapa {
+        position: absolute;
+        bottom: 10px;  /* Distancia desde el fondo de la ventana del mapa */
+        right: 160px;    /* Distancia desde el borde derecho de la ventana del mapa */
+        border-radius: 50%;  /* Hace que el logo sea redondo */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);  /* Sombra para darle un poco de estilo */
+        background-color: white;  /* Fondo blanco detrás del logo */
+        padding: 2px;  /* Añadir un poco de espacio alrededor del logo */
+        z-index: 1000; /* Asegura que el logo esté siempre por encima del mapa */
     }
 
-    footer a {
-        font-size: 12px; /* Reducir el tamaño de las fuentes de los enlaces */
+
+
+    /* Estilos para centrar el cuadro de búsqueda */
+    .leaflet-control-geosearch {
+        position: absolute !important;
+        top: 20px;  /* Ajustar la distancia desde la parte superior */
+        left: 50%;
+        transform: translateX(-50%);  /* Centrar horizontalmente */
+        width: 400px;  /* Puedes ajustar el ancho según tus necesidades */
+
+        max-width: 90%;  /* Asegúrate de que no se haga demasiado grande en pantallas pequeñas */
+        z-index: 10000;  /* Asegura que el buscador esté sobre cualquier otro elemento */
+
+        font-family: 'Helvetica Neue', Arial, sans-serif;
     }
+
+   
+/* Margen superior para la toolbar */
+.leaflet-draw-toolbar-top,
+.leaflet-draw-toolbar-bottom {
+    margin-top: 10px;
+}
+
+/* Margen izquierdo específico para los botones del draw control */
+.leaflet-draw-toolbar a {
+    margin-left: 10px !important; /* Ajusta el valor para que los botones no estén demasiado desplazados hacia la derecha */
+    margin: 10px !important; /* Margen general para separar los botones */
+}
+
+/* Ocultar botones específicos de la barra */
+.leaflet-bar-part.leaflet-bar-part-single {
+    display: none !important;  /* Oculta completamente el botón */
+}
+
+/* Ajustes generales para la barra de herramientas y su contenedor */
+.leaflet-draw-toolbar,
+.leaflet-bar {
+    border: none !important; /* Elimina cualquier borde restante */
+    box-shadow: none !important; /* Elimina cualquier sombra restante */
+    margin: 0 !important; /* Asegura que no haya márgenes que causen el borde */
+    padding: 0 !important; /* Asegura que no haya padding que esté creando el borde */
+}
+
+/* Estilos para los botones del draw control */
+.leaflet-draw-toolbar a, .leaflet-draw-toolbar a:hover {
+    background-color: white !important;
+    border: none !important;
+    border-radius: 5px !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Estilos para los íconos de los botones del draw control */
+.leaflet-draw-toolbar a i, .leaflet-draw-toolbar a span {
+    font-size: 18px !important;
+    color: #333 !important;
+}
+
+/* Efecto hover para los botones del draw control */
+.leaflet-draw-toolbar a:hover {
+    background-color: #f0f0f0 !important;
 }
 
 
-    </style>
+
+</style>
+
 </head>
 
 <body>
@@ -205,24 +290,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="#">Geoportal</a>
-                    </li>
+                
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">
                             <i class="fas fa-bell text-white"></i> Sistema de Alerta Temprana
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
-                            <i class="fas fa-water text-white"></i> Semáforo de Calidad de Agua
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">
-                            <i class="fas fa-leaf text-white"></i> Buenas Prácticas
-                        </a>
-                    </li>
+           
                     <li><a class="nav-link  text-light" aria-current="page" href="index.html">
                         <i class="bi bi-house-door-fill me-1"></i>Página Principal
                     </a></li>
@@ -235,8 +309,9 @@
 <div id="main-container">
     <div id="map-container">
         <div id="map"></div>
-
+         <img src="img/logo_ciidir.jpeg" class="logo" id="logo_mapa" alt="GIISA" width="100px" height="100px">
         <!-- Controles personalizados a la izquierda -->
+
         <div class="custom-controls">
             <button id="zoom-in"><i class="fas fa-plus"></i></button>
             <button id="zoom-out"><i class="fas fa-minus"></i></button>
@@ -249,77 +324,308 @@
             <button id="kml"><span>KML</span></button>
         </div>
 
+<!-- Filtro de capas con control de opacidad y botón de colapso -->
+<div id="layer-control-container">
+    <button id="toggle-layer-control" class="toggle-button">
+        <i class="fas fa-layer-group"></i>
+    </button>
+    <div id="layer-controls" class="layer-control">
+        <h5><strong>Capas de Mapa</strong></h5>
         
+        <!-- Acordeón de Capas -->
+        <div class="accordion" id="layerAccordion">
 
-        <!-- Filtro de capas con control de opacidad y botón de colapso -->
-        <div id="layer-control-container">
-            <button id="toggle-layer-control" class="toggle-button">
-                <i class="fas fa-layer-group"></i>
-            </button>
-            <div id="layer-controls" class="layer-control">
-                <h5>Capas de Mapa</h5>
-                <div class="layer-group">
-                    <label for="chk-satelital">
-                        <i class="fas fa-satellite-dish" style="color: blue;"></i> Satelital
-                    </label>
-                    <input type="checkbox" id="chk-satelital">
-                    <input type="range" id="opacity-satelital" min="0" max="1" step="0.1" value="1">
-                </div>
-                <!-- Nueva capa GeoJSON -->
-                <div class="layer-group">
-                    <label for="chk-geojson">
-                        <i class="fas fa-water" style="color: #1E90FF;"></i> RH20Ac
-                    </label>
-                    <input type="checkbox" id="chk-geojson">
-                    <input type="range" id="opacity-geojson" min="0" max="1" step="0.1" value="1">
-                    <p id="info-geojson" style="display: none;">Subcuenca RH20Ac-R.Atoyac-Oaxaca DE Juárez</p>
-                </div>
-                <!-- Nueva capa GeoJSON HCTI Pronaii -->
-                <div class="layer-group">
-                    <label for="chk-geojson-pronaii">
-                        <i class="fas fa-cloud" style="color: #32CD32;"></i> HCTI Pronaii
-                    </label>
-                    <input type="checkbox" id="chk-geojson-pronaii">
-                    <input type="range" id="opacity-geojson-pronaii" min="0" max="1" step="0.1" value="1">
-                    <p id="info-geojson-pronaii" style="display: none;">Pronaii para el conocimiento y gestión en cuencas del ciclo socio-natural del agua para el bien común y la justicia ambiental por municipio a abril 2024</p>
-                </div>
-                <!-- Nueva capa GeoJSON Plantas de Tratamiento de Agua Residual -->
-                <div class="layer-group">
-                    <label for="chk-geojson-plantas">
-                        <i class="fas fa-industry" style="color: #FF6347;"></i> Plantas Tratamiento Agua Residual 2021
-                    </label>
-                    <input type="checkbox" id="chk-geojson-plantas">
-                    <input type="range" id="opacity-geojson-plantas" min="0" max="1" step="0.1" value="1">
-                    <p id="info-geojson-plantas" style="display: none;">Plantas municipales de tratamiento de agua residual 2021</p>
-                </div>
-                <!-- Nueva capa GeoJSON Indicadores de Calidad de Agua Superficial -->
-                <div class="layer-group">
-                    <label for="chk-geojson-calidad-agua">
-                        <i class="fas fa-tint" style="color: #4CAF50;"></i> Indicadores Calidad Agua Superficial 2022
-                    </label>
-                    <input type="checkbox" id="chk-geojson-calidad-agua">
-                    <input type="range" id="opacity-geojson-calidad-agua" min="0" max="1" step="0.1" value="1">
-                    <p id="info-geojson-calidad-agua" style="display: none;">Indicadores de calidad de agua superficial en Oaxaca, 2022</p>
-                </div>
-             <!-- Nueva capa GeoJSON Cuenca Hidrológica Río Atoyac-Salado -->
-                <div class="layer-group">
-                    <label for="chk-geojson-cuenca-atoyac">
-                        <i class="fas fa-stream" style="color: #4682B4;"></i> Cuenca Hidrológica Río Atoyac-Salado 2021
-                    </label>
-                    <input type="checkbox" id="chk-geojson-cuenca-atoyac">
-                    <input type="range" id="opacity-geojson-cuenca-atoyac" min="0" max="1" step="0.1" value="1">
-                    <p id="info-geojson-cuenca-atoyac" style="display: none;">Volumen de disponibilidad de agua superficial (hectómetros cúbicos)</p>
+            <!-- Capas Base (PRIMERO) -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBaseLayers">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBaseLayers" aria-expanded="true" aria-controls="collapseBaseLayers">
+                        <strong>Capas Base</strong>
+                    </button>
+                </h2>
+                <div id="collapseBaseLayers" class="accordion-collapse collapse show" aria-labelledby="headingBaseLayers" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-satelital">
+                                <i class="fas fa-satellite-dish" style="color: blue;"></i> Satelital
+                            </label>
+                            <input type="checkbox" id="chk-satelital">
+                            <input type="range" id="opacity-satelital" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Denuncias y Semáforo Ambiental -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingReports">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReports" aria-expanded="false" aria-controls="collapseReports">
+                        <strong>Denuncias y Semáforo Ambiental</strong>
+                    </button>
+                </h2>
+                <div id="collapseReports" class="accordion-collapse collapse" aria-labelledby="headingReports" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-denuncias">
+                                <i class="fas fa-exclamation-triangle" style="color: #FF4500;"></i> Denuncias Ambientales
+                            </label>
+                            <input type="checkbox" id="chk-denuncias">
+                            <input type="range" id="opacity-denuncias" min="0" max="1" step="0.1" value="1">
+                            <p id="info-denuncias" style="display: none;">Denuncias de problemas ambientales reportados por la comunidad</p>
+                        </div>
+                        <div class="layer-group">
+                            <label for="chk-semaforo">
+                                <i class="fas fa-traffic-light" style="color: #FFD700;"></i> Semáforo Ambiental
+                            </label>
+                            <input type="checkbox" id="chk-semaforo">
+                            <input type="range" id="opacity-semaforo" min="0" max="1" step="0.1" value="1">
+                            <p id="info-semaforo" style="display: none;">Indicadores de riesgo ambiental clasificados por colores</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Buenas Prácticas -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBestPractices">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBestPractices" aria-expanded="false" aria-controls="collapseBestPractices">
+                        <strong>Buenas Prácticas</strong>
+                    </button>
+                </h2>
+                <div id="collapseBestPractices" class="accordion-collapse collapse" aria-labelledby="headingBestPractices" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-suelos">
+                                <i class="fas fa-seedling" style="color: #8B4513;"></i> Manejo de Suelos
+                            </label>
+                            <input type="checkbox" id="chk-suelos">
+                            <input type="range" id="opacity-suelos" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="layer-group">
+                            <label for="chk-aguas">
+                                <i class="fas fa-water" style="color: #1E90FF;"></i> Manejo de Aguas
+                            </label>
+                            <input type="checkbox" id="chk-aguas">
+                            <input type="range" id="opacity-aguas" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="layer-group">
+                            <label for="chk-residuos">
+                                <i class="fas fa-recycle" style="color: #228B22;"></i> Gestión de Residuos
+                            </label>
+                            <input type="checkbox" id="chk-residuos">
+                            <input type="range" id="opacity-residuos" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="layer-group">
+                            <label for="chk-bosques">
+                                <i class="fas fa-tree" style="color: #006400;"></i> Conservación de Bosques
+                            </label>
+                            <input type="checkbox" id="chk-bosques">
+                            <input type="range" id="opacity-bosques" min="0" max="1" step="0.1" value="1">
+                        </div>
+                        <div class="layer-group">
+                            <label for="chk-educacion">
+                                <i class="fas fa-book" style="color: #FFA500;"></i> Educación Ambiental
+                            </label>
+                            <input type="checkbox" id="chk-educacion">
+                            <input type="range" id="opacity-educacion" min="0" max="1" step="0.1" value="1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Recursos Hídricos -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingWaterResources">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWaterResources" aria-expanded="false" aria-controls="collapseWaterResources">
+                        <strong>Recursos Hídricos</strong>
+                    </button>
+                </h2>
+                <div id="collapseWaterResources" class="accordion-collapse collapse" aria-labelledby="headingWaterResources" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-geojson">
+                                <i class="fas fa-water" style="color: #1E90FF;"></i> RH20Ac
+                            </label>
+                            <input type="checkbox" id="chk-geojson">
+                            <input type="range" id="opacity-geojson" min="0" max="1" step="0.1" value="1">
+                            <p id="info-geojson" style="display: none;">Subcuenca RH20Ac-R.Atoyac-Oaxaca DE Juárez</p>
+                        </div>
+                        <div class="layer-group">
+                            <label for="chk-geojson-cuenca-atoyac">
+                                <i class="fas fa-stream" style="color: #4682B4;"></i> Cuenca Hidrológica Río Atoyac-Salado 2021
+                            </label>
+                            <input type="checkbox" id="chk-geojson-cuenca-atoyac">
+                            <input type="range" id="opacity-geojson-cuenca-atoyac" min="0" max="1" step="0.1" value="1">
+                            <p id="info-geojson-cuenca-atoyac" style="display: none;">Volumen de disponibilidad de agua superficial (hectómetros cúbicos)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calidad del Agua -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingWaterQuality">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWaterQuality" aria-expanded="false" aria-controls="collapseWaterQuality">
+                        <strong>Calidad del Agua</strong>
+                    </button>
+                </h2>
+                <div id="collapseWaterQuality" class="accordion-collapse collapse" aria-labelledby="headingWaterQuality" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-geojson-calidad-agua">
+                                <i class="fas fa-tint" style="color: #4CAF50;"></i> Indicadores Calidad Agua Superficial 2022
+                            </label>
+                            <input type="checkbox" id="chk-geojson-calidad-agua">
+                            <input type="range" id="opacity-geojson-calidad-agua" min="0" max="1" step="0.1" value="1">
+                            <p id="info-geojson-calidad-agua" style="display: none;">Indicadores de calidad de agua superficial en Oaxaca, 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infraestructura -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingInfrastructure">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInfrastructure" aria-expanded="false" aria-controls="collapseInfrastructure">
+                        <strong>Infraestructura</strong>
+                    </button>
+                </h2>
+                <div id="collapseInfrastructure" class="accordion-collapse collapse" aria-labelledby="headingInfrastructure" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-geojson-plantas">
+                                <i class="fas fa-industry" style="color: #FF6347;"></i> Plantas Tratamiento Agua Residual 2021
+                            </label>
+                            <input type="checkbox" id="chk-geojson-plantas">
+                            <input type="range" id="opacity-geojson-plantas" min="0" max="1" step="0.1" value="1">
+                            <p id="info-geojson-plantas" style="display: none;">Plantas municipales de tratamiento de agua residual 2021</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cambio Climático y Pronaii -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingClimateChange">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseClimateChange" aria-expanded="false" aria-controls="collapseClimateChange">
+                        <strong>Cambio Climático y Pronaii</strong>
+                    </button>
+                </h2>
+                <div id="collapseClimateChange" class="accordion-collapse collapse" aria-labelledby="headingClimateChange" data-bs-parent="#layerAccordion">
+                    <div class="accordion-body">
+                        <div class="layer-group">
+                            <label for="chk-geojson-pronaii">
+                                <i class="fas fa-cloud" style="color: #32CD32;"></i> HCTI Pronaii
+                            </label>
+                            <input type="checkbox" id="chk-geojson-pronaii">
+                            <input type="range" id="opacity-geojson-pronaii" min="0" max="1" step="0.1" value="1">
+                            <p id="info-geojson-pronaii" style="display: none;">Pronaii para el conocimiento y gestión en cuencas del ciclo socio-natural del agua para el bien común y la justicia ambiental por municipio a abril 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
         </div>
     </div>
 </div>
 
-<!-- Pie de página -->
-<footer style="background-color: #622132; color: #fff;">
-    <p>&copy; 2024 Observatorio del Río Atoyac, Oaxaca. Todos los derechos reservados.</p>
-    <p><a href="#">Política de privacidad</a> | <a href="#">Términos de uso</a> | <a href="#">Contacto</a></p>
+
+ </div>
+</div>
+
+
+
+<div id="draw-controls" class="draw-controls-container">
+    <!-- Los controles de dibujo y otros controles personalizados se agregan aquí -->
+</div>
+
+
+
+
+<!-- Pie de página optimizado -->
+<footer class="footer-conacyt mt-4 py-2" style="background-color: #622132; color: #fff;">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Información de contacto -->
+            <div class="col-md-3 d-flex align-items-center">
+                <img src="img/conahcyt-blanco.svg" alt="GIISA" width="160px" height="50px">
+            </div>
+
+            <!-- Lo Institucional -->
+            <div class="col-md-3 d-flex align-items-center">
+                <img src="img/logo_ciddir.png" class="logo" id="logo_institucion" alt="GIISA" width="50px" height="50px">
+            </div>
+
+            <!-- Redes sociales mejoradas -->
+            <div class="col-md-3">
+                <h6>Síguenos en</h6>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item me-2">
+                        <a href="https://facebook.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item me-2">
+                        <a href="https://twitter.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item me-2">
+                        <a href="https://instagram.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://youtube.com/giisa" target="_blank" class="text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Contador de visitas -->
+            <div class="col-md-3 text-center">
+                <div class="contador">
+                    <h6>Visitas a esta página</h6>
+                    <h2 id="visit-count" class="text-white mb-0">0</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
+
+
+
+<script src="script/contador.js"></script>
+
+
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('iucsrsdafw3g');
+</script>
+<!-- End of Async Drift Code -->
+
 
 <!-- Scripts Bootstrap y Leaflet -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -327,6 +633,12 @@
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 <script src="https://unpkg.com/leaflet-omnivore@0.3.4/leaflet-omnivore.min.js"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-geosearch/dist/bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-minimap/dist/Control.MiniMap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
 <script>
     // Inicializar el mapa con Leaflet sin los controles de zoom predeterminados
     var map = L.map('map', {
@@ -335,13 +647,56 @@
         zoom: 10
     });
 
-    // Añadir capa base OpenStreetMap
+    // Sección 1: Capas Base
     var baseLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         attribution: '© OpenStreetMap'
     }).addTo(map);
 
-    // Crear las capas adicionales
+        // Crear el minimapa
+        var miniMapLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+        var miniMap = new L.Control.MiniMap(miniMapLayer, {
+            toggleDisplay: true,
+            minimized: false,
+            position: 'bottomright'
+        }).addTo(map);
+
+    // Sección 2: Control Personalizado de Coordenadas
+    var coordinatesControl = L.control({ position: 'bottomleft' });
+
+    coordinatesControl.onAdd = function(map) {
+        this._div = L.DomUtil.create('div', 'coordinates-control');
+        this.update();
+        return this._div;
+    };
+
+    coordinatesControl.update = function(latlng) {
+        this._div.innerHTML = latlng ? `Lat: ${latlng.lat.toFixed(4)}, Lng: ${latlng.lng.toFixed(4)}` : 'Lat: --, Lng: --';
+    };
+
+    coordinatesControl.addTo(map);
+    map.on('mousemove', function(e) {
+        coordinatesControl.update(e.latlng);
+    });
+
+    // Añadir la escala al mapa en la parte inferior izquierda
+    L.control.scale({
+        position: 'bottomleft',
+        imperial: false
+    }).addTo(map);
+
+    // Sección 3: Marca de Agua
+    var watermarkBounds = [[17.8, -97.5], [16.5, -96]];
+    L.imageOverlay('img/logo_ciddir.png', watermarkBounds, {
+        opacity: 0.1
+    }).addTo(map);
+
+    // Sección 4: Capas GeoJSON y manejo de capas 
+    // Sección 4: Capas GeoJSON
+    // Crear capas adicionales (GeoJSON)
     var satelitalLayer = L.tileLayer('https://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}', { opacity: 1 });
 
     // Crear la capa GeoJSON RH20Ac (inicialmente vacía)
@@ -423,6 +778,7 @@
     });
     var geojsonCuencaAtoyacLayerLoaded = false;
 
+     // Sección 5: Manejo de Capas
     // Añadir los listeners para mostrar/ocultar las capas con los checkboxes
     document.getElementById('chk-satelital').addEventListener('change', function() {
         if (this.checked) {
@@ -582,7 +938,8 @@
         satelitalLayer.setOpacity(this.value);
     });
 
-    // Controles personalizados de zoom y otros
+    // Sección 6: Controles Personalizados
+    // Controles personalizados de zoom
     document.getElementById('zoom-in').addEventListener('click', function() {
         map.zoomIn();
     });
@@ -615,7 +972,8 @@
     document.getElementById('custom-hand').addEventListener('click', function() {
         alert("Función personalizada activada");
     });
-
+    // Sección 7: Carga de Archivos KML
+    // Añadir KML al mapa
     document.getElementById('kml').addEventListener('click', function() {
         document.getElementById('kml-file').click();
     });
@@ -634,7 +992,7 @@
         }
     });
 
-    // JavaScript para colapsar/expandir el control de capas
+    // Sección 8: Colapsar/Expandir Control de Capas
     document.getElementById('toggle-layer-control').addEventListener('click', function() {
         const layerControls = document.getElementById('layer-controls');
         if (layerControls.style.display === 'none' || layerControls.style.display === '') {
@@ -643,5 +1001,64 @@
             layerControls.style.display = 'none';
         }
     });
+
+
+
+    // Sección 7: Añadir el buscador GeoSearch
+// Sección 7: Añadir el buscador GeoSearch
+const provider = new window.GeoSearch.OpenStreetMapProvider({
+    params: {
+        countrycodes: 'MX', // Limitar la búsqueda a México
+        viewbox: [-98.5, 18.0, -94.9, 15.7], // Coordenadas aproximadas de los límites de Oaxaca (longitud oeste, latitud norte, longitud este, latitud sur)
+        bounded: 1 // Limitar estrictamente la búsqueda dentro del área definida en viewbox
+    }
+});
+
+const searchControl = new window.GeoSearch.GeoSearchControl({
+    provider: provider,
+    style: 'bar',  // Estilo del control de búsqueda
+    showMarker: true,
+    showPopup: true,
+    marker: {
+        icon: new L.Icon.Default(),
+        draggable: false,
+    },
+    retainZoomLevel: false,
+    animateZoom: true,
+    autoClose: true,
+    searchLabel: 'Buscar una ubicación',
+    keepResult: true,
+});
+
+map.addControl(searchControl);
+
+        // Añadir herramientas de dibujo
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        var drawControl = new L.Control.Draw({
+            position: 'topleft',
+            draw: {
+                polygon: true,
+                polyline: true,
+                rectangle: true,
+                circle: true,
+                marker: true
+            },
+            edit: {
+                featureGroup: drawnItems,
+                remove: true
+            }
+        });
+        map.addControl(drawControl);
+
+        // Evento para añadir capas dibujadas al mapa
+        map.on(L.Draw.Event.CREATED, function (e) {
+            var layer = e.layer;
+            drawnItems.addLayer(layer);
+        });
+
 </script>
+
+
 </html>
