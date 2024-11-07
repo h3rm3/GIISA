@@ -118,6 +118,12 @@ html, body {
     top: 10px;
     right: 10px;
     z-index: 1001;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Ajustes de tamaños de texto y elementos del acordeón */
@@ -184,6 +190,17 @@ html, body {
 /* Ajustes para los botones del draw control */
 .leaflet-draw-toolbar a {
     margin: 10px !important;
+    background-color: white !important;
+    border: none !important;
+    border-radius: 30% !important;
+    padding: 8px !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .leaflet-bar-part.leaflet-bar-part-single {
@@ -196,20 +213,6 @@ html, body {
     box-shadow: none !important;
     margin: 0 !important;
     padding: 0 !important;
-}
-
-.leaflet-draw-toolbar a, .leaflet-draw-toolbar a:hover {
-    background-color: white !important;
-    border: none !important;
-    border-radius: 5px !important;
-    padding: 10px !important;
-    cursor: pointer !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-    width: 40px !important;
-    height: 40px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
 }
 
 .leaflet-draw-toolbar a i, .leaflet-draw-toolbar a span {
@@ -249,18 +252,11 @@ html, body {
         height: 50vh;
     }
 
-    .leaflet-draw-toolbar a, .leaflet-draw-toolbar a:hover {
-
-    width: 20px;
-    height: 20px;
-  
-}
-    
     .custom-controls button {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         padding: 4px;
-        font-size: 5px;
+        font-size: 12px;
     }
 
     .layer-control {
@@ -290,7 +286,6 @@ html, body {
         display: none !important;
     }
 } 
-
 
 
 </style>
