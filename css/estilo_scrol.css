@@ -7,32 +7,32 @@
 }
 
 .scroll-wrapper {
-  width: 80vw; /* Usamos viewport width para que sea un 80% del ancho del dispositivo */
+  width: 80vw; /* Ancho del 80% del dispositivo en pantallas más grandes */
   max-width: 18rem; /* Limita el ancho máximo en pantallas grandes */
-  height: 30vh; /* Usamos una altura relativa a la pantalla para ser más pequeño */
-  border: 1px solid var(--main-color); /* Reducimos el grosor del borde para ahorrar espacio */
+  height: 30vh; /* Altura relativa a la pantalla para ser más pequeño */
+  border: 1px solid var(--main-color); /* Borde reducido para ahorrar espacio */
   margin: 1rem auto;
   background-color: var(--background-color);
   z-index: 1;
-  position: fixed;
-  top: 5vh; /* Ajusta la posición superior para dispositivos móviles */
-  right: 10vw; /* Espacio desde la derecha para centrar mejor el contenedor */
+  position: fixed; /* Posición fija */
+  top: 5vh; /* Por defecto se ubica en la parte superior */
+  right: 10vw; /* Espacio desde la derecha */
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
-  border-radius: 4px; /* Bordes más pequeños para ahorrar espacio */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+  border-radius: 4px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 .scroll-content {
   height: auto;
   position: relative;
-  padding: 0.5rem; /* Reducimos el padding para ahorrar espacio */
+  padding: 0.5rem; /* Padding reducido */
 }
 
 .activity-item {
   font-weight: bold;
-  margin-top: 0.75rem; /* Reducimos el espacio superior */
+  margin-top: 0.75rem; /* Margen superior reducido */
   font-size: 0.9rem; /* Tamaño de texto más pequeño */
 }
 
@@ -50,20 +50,20 @@
 .activity-meta {
   font-size: 0.7rem; /* Texto más pequeño para los metadatos */
   color: var(--text-color);
-  margin-bottom: 0.5rem; /* Reducimos el margen inferior */
+  margin-bottom: 0.5rem; /* Margen inferior reducido */
 }
 
 h1.text-center {
   background-color: var(--main-color);
   color: #ffffff;
-  padding: 0.5rem; /* Reducimos el padding para hacerlo más compacto */
+  padding: 0.5rem; /* Padding reducido */
   font-size: 1.2rem; /* Tamaño de fuente más pequeño */
   margin: 0;
   text-align: center;
   position: relative;
   z-index: 10;
   box-sizing: border-box;
-  border-radius: 4px 4px 0 0; /* Bordes más pequeños */
+  border-radius: 4px 4px 0 0; /* Bordes redondeados en la parte superior */
 }
 
 .close-button {
@@ -89,13 +89,16 @@ h1.text-center {
   background-color: #44181f;
 }
 
-/* Media query para dispositivos muy pequeños */
+/* Media query para dispositivos móviles (ancho máximo de 400px) */
 @media (max-width: 400px) {
   .scroll-wrapper {
-    width: 90%; /* Mayor cobertura para pantallas pequeñas */
-    height: 25vh; /* Altura aún más pequeña */
-    bottom: 0;
-    right: 0;
+    width: 90%; /* Ancho casi completo en pantallas pequeñas */
+    height: 25vh; /* Altura pequeña para ocupar menos espacio */
+    bottom: 0; /* Posiciona el contenedor en la parte inferior */
+    right: 5%; /* Añade un margen pequeño desde la derecha */
+    top: auto; /* Elimina la posición superior */
+    margin: 0; /* Elimina el margen para asegurarse de que quede bien alineado */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
   }
 
   h1.text-center {
