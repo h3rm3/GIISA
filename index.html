@@ -8,122 +8,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-     
-        .navbar-brand,
-        .nav-link {
-            color: #fff !important;
-        }
-
-        .dropdown-item {
-            color: #000 !important;
-        }
-
-        .nav-link:hover,
-        .dropdown-item:hover {
-            background-color: #333;
-            color: #fff !important;
-        }
-
-        h1, h2, h3 {
-            color: #622132;
-            margin-top: 20px;
-        }
-
-        .section-header {
-            padding: 20px;
-            border-bottom: 2px solid #622132;
-            margin-bottom: 20px;
-        }
-
-        .container {
-            margin-top: 20px;
-            padding-bottom: 40px;
-        }
-
-        /* Footer styling */
-        .footer {
-            background-color: #4b1624;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .footer a {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        .footer a:hover {
-            color: #ddd;
-        }
-
-        /* Custom button styles */
-        .btn-primary {
-            background-color: #622132;
-            border-color: #622132;
-        }
-
-        .btn-primary:hover {
-            background-color: #4b1624;
-            border-color: #4b1624;
-        }
-
-        /* Ensure the footer stays at the bottom */
-        body, html {
-            height: 100%;
-        }
-
-        .content-wrapper {
-            min-height: calc(100vh - 140px); /* Adjust for footer height */
-        }
-
- .impact-icon {
-        transition: transform 0.3s ease-in-out;
-    }
-    .impact-icon:hover {
-        transform: scale(1.2);
-    }
-
-    /* Animaciones de los testimonios */
-    .fade-in {
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeIn 1s forwards;
-    }
-
-    @keyframes fadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Estilo del contador */
-    .counter {
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-.navbar {
-background-color: #622132; color: #fff;}
-
-
-
-    </style>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="stylesheet" href="css/estilo_scrol.css">
 
 
 </head>
 
-<body>
+<body onload="scrollStart()">
 
 
 <!-- Menú de navegación mejorado con ajustes de legibilidad -->
@@ -143,7 +34,7 @@ background-color: #622132; color: #fff;}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://h3rm3.github.io/GIISA/Quienessomos.html">
+                    <a class="nav-link" href="Quienessomos.html">
                         <i class="bi bi-people-fill me-1"></i>Quienes Somos
                     </a>
                 </li>
@@ -152,14 +43,14 @@ background-color: #622132; color: #fff;}
                         <i class="bi bi-book-fill me-1"></i>PRONAII
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="pronaaiDropdown">
-                        <li><a class="dropdown-item "  href="pronai1.html"><i class="bi bi-journal me-1"></i>PRONAII 1 - Dra.  Alejandra Rojas Olivos</a></li>
-                        <li><a class="dropdown-item" href="pronai2.html"><i class="bi bi-journal me-1"></i>PRONAII 2 - Dra. Dominique Rivas Ponce</a></li>
-                        <li><a class="dropdown-item" href="pronai3.html"><i class="bi bi-journal me-1"></i>PRONAII 3 - Dr.  Fernando Gumeta Gómez</a></li>
-                        <li><a class="dropdown-item" href="pronai4.html"><i class="bi bi-journal me-1"></i>PRONAII 4 - Dr. Guillermo Núñez Mojica</a></li>
+                        <li><a class="dropdown-item "  href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 1</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 2</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 3</a></li>
+                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-journal me-1"></i>Objetivo 4</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="otros_proyectos.html">
+                    <a class="nav-link" href="Enconstruccion.html">
                         <i class="bi bi-diagram-3-fill me-1"></i>Otros Proyectos
                     </a>
                 </li>
@@ -169,20 +60,12 @@ background-color: #622132; color: #fff;}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="observatorioDropdown">
                         <li><a class="dropdown-item" href="Geoportal.html"><i class="bi bi-map-fill me-1"></i>Geoportal</a></li>
-                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-folder-fill me-1"></i>Repositorio</a></li>
-                        <li><a class="dropdown-item" href="Enconstruccion.html"><i class="bi bi-exclamation-circle-fill me-1"></i>Denuncias</a></li>
+                         <li><a class="dropdown-item" href="repositorio.html"><i class="bi bi-folder-fill me-1"></i>Repositorio</a></li>
+                      
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Enconstruccion.html">
-                        <i class="fas fa-traffic-light me-1"></i>Semáforo
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Enconstruccion.html">
-                        <i class="bi bi-bell-fill me-1"></i>Alerta Temprana
-                    </a>
-                </li>
+               
+               
             </ul>
 
             <!-- Caja de búsqueda ajustada -->
@@ -237,14 +120,39 @@ background-color: #622132; color: #fff;}
         </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#giisaSlider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #622132; border-radius: 50%;"></span>
+        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: green; border-radius: 50%;"></span>
         <span class="visually-hidden">Anterior</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#giisaSlider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #622132; border-radius: 50%;"></span>
+        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: green; border-radius: 50%;"></span>
         <span class="visually-hidden">Siguiente</span>
     </button>
 </div>
+
+<!-- Contenido Eventos y noticias -->
+
+<section class="content-section" >
+  <div class="scroll-wrapper" id="scroll-wrapper">
+    <button id="close-button" class="close-button" onclick="closeNews()">X</button>
+    <h1 class="text-center">Eventos  Recientes</h1>
+    <div id="scroll" class="scroll-content">
+      <div class="activity-item">
+        <a href="https://ejemplo.com/reunion">Reunión de equipo para discutir iniciativas ambientales.</a>
+        <div class="activity-meta">Fecha: 15 de octubre de 2024 | Ubicación: Sala de Conferencias A</div>
+        <div class="content">Participación en la reunión para discutir iniciativas clave para proteger el medio ambiente.</div>
+      </div>
+
+      <div class="activity-item">
+        <a href="https://ejemplo.com/plantacion">Plantación de árboles en el parque local.</a>
+        <div class="activity-meta">Fecha: 18 de octubre de 2024 | Ubicación: Parque Central</div>
+        <div class="content">Evento comunitario para mejorar el área verde del parque y sensibilizar sobre la importancia de los árboles.</div>
+      </div>
+
+      <!-- Otros eventos -->
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -263,26 +171,42 @@ background-color: #622132; color: #fff;}
     Los ríos son esenciales para el equilibrio de los ecosistemas y la supervivencia de las poblaciones humanas. En México, 7 de cada 10 ríos sufren de contaminación y deterioro ambiental. El proyecto de GIISA nace como respuesta a esta problemática, específicamente en la subcuenca del río Atoyac-Salado, en Oaxaca.
 </p>
 
-<!-- División visual -->
-        <div class="divider my-4" style="border-bottom: 2px solid #622132; width: 100px; margin: 20px auto;"></div>
-      <!-- Iconos para mayor visualización -->
-        <div class="row text-center">
-            <div class="col-md-4">
-                <i class="fas fa-leaf fa-3x mb-3" style="color: #62a132;"></i>
-                <h5 class="fw-bold" style="color: #622132;">Restauración de Ecosistemas</h5>
-                <p style="color: #666;">Trabajamos para devolver la vida a los ecosistemas ribereños.</p>
+
+
+<!-- Impacto en Cifras con animaciones y colores temáticos -->
+<div class="impact-section py-5 text-center" style="background-color: #e0f7fa; color: #004d40;">
+    <div class="container">
+        <h2>Impacto del Proyecto</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Icono de comunidades involucradas con emoticono -->
+                <div class="impact-icon mb-3" style="font-size: 3rem; animation: bounce 2s infinite;">👥</div>
+                <h3 class="counter" data-target="500">0</h3>
+                <p>Comunidades Involucradas</p>
             </div>
-            <div class="col-md-4">
-                <i class="fas fa-water fa-3x mb-3" style="color: #42a5f5;"></i>
-                <h5 class="fw-bold" style="color: #622132;">Monitoreo del Agua</h5>
-                <p style="color: #666;">Fomentamos la cultura del agua y su monitoreo continuo.</p>
+            <div class="col-md-3">
+                <!-- Icono de alianzas con emoticono -->
+                <div class="impact-icon mb-3" style="font-size: 3rem; animation: pulse 2s infinite;">🤝</div>
+                <h3 class="counter" data-target="20">0</h3>
+                <p>Alianzas</p>
             </div>
-            <div class="col-md-4">
-                <i class="fas fa-hand-holding-heart fa-3x mb-3" style="color: #f39c12;"></i>
-                <h5 class="fw-bold" style="color: #622132;">Involucramiento Comunitario</h5>
-                <p style="color: #666;">Involucramos a la comunidad en la conservación del medio ambiente.</p>
+            <div class="col-md-3">
+                <!-- Icono de río restaurado con emoticono -->
+                <div class="impact-icon mb-3" style="font-size: 3rem; animation: wave 2s infinite;">🌊</div>
+                <h3 class="counter" data-target="15">0</h3>
+                <p>Río Restaurado (km)</p>
+            </div>
+            <div class="col-md-3">
+                <!-- Icono de plantas de tratamiento con emoticono -->
+                <div class="impact-icon mb-3" style="font-size: 3rem; animation: rotate 2s infinite;">♻️</div>
+                <h3 class="counter" data-target="10">0</h3>
+                <p>Plantas de Tratamiento Rehabilitadas</p>
             </div>
         </div>
+    </div>
+</div>
+
+
 
 <!-- Objetivo general  -->
 <div class="container my-5">
@@ -336,244 +260,6 @@ background-color: #622132; color: #fff;}
 <!-- Termina Objetivo general  -->
 
 
-<!-- Sección de Objetivos Específicos -->
-
-    <div class="container">
-        <!-- Título -->
-        <div class="section-header text-center mb-4">
-            <h2 style="color: #622132;">Objetivos Específicos</h2>
-            <p class="text-muted">Descubre los objetivos clave que guían nuestro proyecto para la subcuenca del río Atoyac-Salado.</p>
-        </div>
-
-        <!-- Accordion Bootstrap 5 -->
-        <div class="accordion" id="accordionObjectives">
-            <!-- Objetivo 1 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading1">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                        Objetivo 1: Investigar y proponer un modelo metodológico
-                    </button>
-                </h2>
-                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV7. Investigar y proponer un modelo metodológico para el diseño de un Observatorio Socioambiental y estudiar su función como instrumento para dar cumplimiento a los principios y lineamientos que integran el Acuerdo Regional sobre el Acceso a la Información, la Participación Pública y el Acceso a la Justicia en Asuntos Ambientales (Acuerdo de Escazú).
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 2 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading2">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                        Objetivo 2: Investigar, diseñar y evaluar un sistema de alerta temprana
-                    </button>
-                </h2>
-                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV8. Investigar, diseñar y evaluar un sistema de alerta temprana a exposición a agentes tóxicos y procesos contaminantes extremos acorde a las condiciones de amenaza, vulnerabilidad y riesgos socioambientales en la subcuenca del río Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 3 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading3">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                        Objetivo 3: Diseñar la organización del laboratorio interdisciplinario
-                    </button>
-                </h2>
-                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV4. Diseñar la organización del laboratorio interdisciplinario LABPRONAII para el monitoreo y evaluación de la calidad del agua en términos de la normatividad, mediante la estandarización de técnicas analíticas para su futura certificación.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 4 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading4">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                        Objetivo 4: Elaborar un programa de educación ambiental
-                    </button>
-                </h2>
-                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC2. Elaborar e impulsar un programa de educación ambiental y Nueva Cultura del Agua multinivel para la formación de cuadros y la sensibilización sobre los problemas socioambientales en la subcuenca del río Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 5 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading5">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                        Objetivo 5: Evaluar experiencias piloto de plantas de tratamiento
-                    </button>
-                </h2>
-                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV6. Investigar y evaluar experiencias piloto de rediseño o adaptación de plantas de tratamiento de aguas residuales con soluciones basadas en la naturaleza a diferentes niveles.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 6 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading6">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                        Objetivo 6: Restauración de ecosistemas riparios
-                    </button>
-                </h2>
-                <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC5. Desarrollar experiencias piloto para la restauración de ecosistemas riparios y humedales en la subcuenca del río Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 7 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading7">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                        Objetivo 7: Reingeniería de PTARs convencionales
-                    </button>
-                </h2>
-                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC6. Implementar experiencias piloto de reingeniería y adaptación de PTARs convencionales con soluciones basadas en la naturaleza a diferentes escalas.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 8 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading8">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                        Objetivo 8: Desarrollar un sistema de alerta temprana
-                    </button>
-                </h2>
-                <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC8. Desarrollar e implementar un sistema de alerta temprana con la red de órganos intercomunitarios/intermunicipales que genere el involucramiento activo y fomente la cultura de la protección civil en la subcuenca del río Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 9 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading9">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
-                        Objetivo 9: Red de monitoreo integral
-                    </button>
-                </h2>
-                <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC3. Co-construir una red de monitoreo integral de la calidad del agua y ecotoxicología mediante dos estrategias: una basada en la comunidad y otra mediante laboratorio de química-analítica de puntos críticos.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 10 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading10">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
-                        Objetivo 10: Conformar una red intercomunitaria
-                    </button>
-                </h2>
-                <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC1. Conformar una red intercomunitaria/intermunicipal e intersectorial autogestiva que se coordine y desarrolle nuevas competencias, prácticas y herramientas para el saneamiento del agua en la subcuenca del río Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 11 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading11">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
-                        Objetivo 11: Diseñar un Observatorio Socioambiental
-                    </button>
-                </h2>
-                <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC7. Diseñar e implementar un Observatorio Socioambiental para la vigilancia y monitoreo de las actividades locales que impactan en el ciclo socio natural del agua de la cuenca Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 12 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading12">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
-                        Objetivo 12: Implementar el laboratorio interdisciplinario LABPRONAII
-                    </button>
-                </h2>
-                <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINC4. Implementar el laboratorio interdisciplinario LABPRONAII que comprende tres áreas: Toxicología socioambiental, Percepción remota de investigación e incidencia, y Observatorio Socioambiental.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 13 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading13">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
-                        Objetivo 13: Programa de monitoreo integral de la calidad del agua
-                    </button>
-                </h2>
-                <div id="collapse13" class="accordion-collapse collapse" aria-labelledby="heading13" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV3. Investigar, diseñar y evaluar un programa de monitoreo integral de la calidad del agua y toxicología socioambiental mediante dos estrategias: una basada en la comunidad y otra de puntos críticos o de interés ecotoxicológico.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 14 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading14">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse14" aria-expanded="false" aria-controls="collapse14">
-                        Objetivo 14: Documentar a los actores sociales
-                    </button>
-                </h2>
-                <div id="collapse14" class="accordion-collapse collapse" aria-labelledby="heading14" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV1. Investigar y documentar a los actores sociales, sus percepciones, hábitos, creencias y necesidades en torno a los esfuerzos de saneamiento del agua en la subcuenca del río Atoyac-Salado.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 15 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading15">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse15" aria-expanded="false" aria-controls="collapse15">
-                        Objetivo 15: Desarrollar una Nueva Cultura del Agua
-                    </button>
-                </h2>
-                <div id="collapse15" class="accordion-collapse collapse" aria-labelledby="heading15" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV2. Investigar y plantear un método educativo adecuado para impulsar la construcción de una Nueva Cultura del Agua enfocada en la problemática de la subcuenca del río Atoyac.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Objetivo 16 -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="heading16">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse16" aria-expanded="false" aria-controls="collapse16">
-                        Objetivo 16: Restaurar ecosistemas ribereños y humedales
-                    </button>
-                </h2>
-                <div id="collapse16" class="accordion-collapse collapse" aria-labelledby="heading16" data-bs-parent="#accordionObjectives">
-                    <div class="accordion-body">
-                        OINV5. Investigar y evaluar sitios prioritarios para la restauración de ecosistemas ribereños, riparios y humedales, evaluando la efectividad de las estrategias seleccionadas.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 
 <!-- Sección de pilares del proyecto -->
 <h2 class="mt-5 text-center" style="color: #622132;">Pilares del Proyecto</h2>
@@ -584,7 +270,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-network-wired fa-3x" style="color: #ff6f61;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #ff6f61;">🌐</div>
                 <h5 class="mt-3" style="color: #333;">Red Intersectorial e Intercomunitaria</h5>
                 <p>Establecer una red que involucre a comunidades locales y actores clave de diferentes sectores para trabajar de manera coordinada.</p>
             </div>
@@ -594,7 +280,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-flask fa-3x" style="color: #42a5f5;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #42a5f5;">🧪</div>
                 <h5 class="mt-3" style="color: #333;">Monitoreo de Calidad del Agua</h5>
                 <p>Capacitar a expertos locales para el monitoreo ambiental y la ecotoxicología del agua en la región afectada.</p>
             </div>
@@ -605,7 +291,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-chalkboard-teacher fa-3x" style="color: #66bb6a;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #66bb6a;">📚</div>
                 <h5 class="mt-3" style="color: #333;">Educación Ambiental</h5>
                 <p>Fomentar la cultura del agua en las comunidades locales a través de la educación ambiental.</p>
             </div>
@@ -615,7 +301,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-bell fa-3x" style="color: #ffa726;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #ffa726;">🚨</div>
                 <h5 class="mt-3" style="color: #333;">Sistema de Alerta Temprana</h5>
                 <p>Desarrollar un sistema de alerta temprana para la exposición a agentes tóxicos y procesos contaminantes.</p>
             </div>
@@ -626,7 +312,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-globe fa-3x" style="color: #8e24aa;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #8e24aa;">🌍</div>
                 <h5 class="mt-3" style="color: #333;">Observatorio Ciudadano</h5>
                 <p>Crear un observatorio para recibir denuncias ciudadanas y asegurar la transparencia en el manejo de los recursos hídricos.</p>
             </div>
@@ -636,7 +322,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-recycle fa-3x" style="color: #4caf50;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #4caf50;">♻️</div>
                 <h5 class="mt-3" style="color: #333;">Reingeniería de Plantas de Tratamiento</h5>
                 <p>Implementar soluciones basadas en la naturaleza para mejorar el tratamiento de aguas residuales.</p>
             </div>
@@ -647,7 +333,7 @@ background-color: #622132; color: #fff;}
     <div class="col-md-6 offset-md-3 mb-4">
         <div class="card shadow-sm border-0" style="background-color: #ffffff;">
             <div class="card-body text-center">
-                <i class="fas fa-seedling fa-3x" style="color: #388e3c;"></i>
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #388e3c;">🌱</div>
                 <h5 class="mt-3" style="color: #333;">Restauración de Ecosistemas</h5>
                 <p>Restaurar los ecosistemas ribereños y humedales para mejorar la biodiversidad y calidad del agua.</p>
             </div>
@@ -657,93 +343,59 @@ background-color: #622132; color: #fff;}
 
     </div>
 </div>
-<!-- Impacto en Cifras con animaciones y colores temáticos -->
-<div class="impact-section py-5 text-center" style="background-color: #e0f7fa; color: #004d40;">
+
+
+<!-- Sección de Financiadores -->
+<section class="financiadores-section py-5 text-center" style="background-color: #ffffff; color: #004d40;">
     <div class="container">
-        <h2>Impacto del Proyecto</h2>
-        <div class="row">
-            <div class="col-md-3">
-                <!-- Icono de voluntarios con color temático -->
-                <i class="fas fa-users fa-3x mb-3 impact-icon" style="color: #ff6f61;"></i>
-                <h3 class="counter" data-target="500">0</h3>
-                <p>Voluntarios Involucrados</p>
+        <h2>Financiadores</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-2 col-sm-4 mb-4">
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #004d40;">💰</div>
+                <p class="mt-2">Financiador 1</p>
             </div>
-            <div class="col-md-3">
-                <!-- Icono de alertas tempranas con color temático -->
-                <i class="fas fa-exclamation-triangle fa-3x mb-3 impact-icon" style="color: #ffa726;"></i>
-                <h3 class="counter" data-target="20">0</h3>
-                <p>Alertas Tempranas Detectadas</p>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #004d40;">🏦</div>
+                <p class="mt-2">Financiador 2</p>
             </div>
-            <div class="col-md-3">
-                <!-- Icono de río restaurado con color temático -->
-                <i class="fas fa-water fa-3x mb-3 impact-icon" style="color: #42a5f5;"></i>
-                <h3 class="counter" data-target="15">0</h3>
-                <p>Río Restaurado (km)</p>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #004d40;">🐖</div>
+                <p class="mt-2">Financiador 3</p>
             </div>
-            <div class="col-md-3">
-                <!-- Icono de plantas de tratamiento con color temático -->
-                <i class="fas fa-recycle fa-3x mb-3 impact-icon" style="color: #66bb6a;"></i>
-                <h3 class="counter" data-target="10">0</h3>
-                <p>Plantas de Tratamiento Rehabilitadas</p>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #004d40;">🤝</div>
+                <p class="mt-2">Financiador 4</p>
+            </div>
+            <div class="col-md-2 col-sm-4 mb-4">
+                <div class="impact-icon mb-3" style="font-size: 3rem; color: #004d40;">💵</div>
+                <p class="mt-2">Financiador 5</p>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 
 
-<!-- Animaciones para Testimonios -->
-<div class="testimonials-section py-5">
-    <div class="container">
-        <h2 class="text-center">Testimonios</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <blockquote class="blockquote fade-in">
-                    <p>"Gracias al trabajo de GIISA, hemos visto cómo nuestra comunidad se involucra más en la protección del río. Los cambios son visibles."</p>
-                    <footer class="blockquote-footer">Maria López, Voluntaria</footer>
-                </blockquote>
-            </div>
-            <div class="col-md-4">
-                <blockquote class="blockquote fade-in">
-                    <p>"El sistema de monitoreo que implementamos ha sido clave para detectar problemas antes de que se agraven. Este proyecto ha sido transformador."</p>
-                    <footer class="blockquote-footer">Dr. Pedro García, Científico Ambiental</footer>
-                </blockquote>
-            </div>
-            <div class="col-md-4">
-                <blockquote class="blockquote fade-in">
-                    <p>"La restauración de los humedales ha traído de vuelta la biodiversidad que creíamos perdida. Este es un ejemplo de lo que se puede lograr."</p>
-                    <footer class="blockquote-footer">José Morales, Residente Local</footer>
-                </blockquote>
-            </div>
-        </div>
-    </div>
-</div>
 
-    <!-- Pie de página -->
+<!-- Pie de página -->
 
 <footer class="footer-conacyt mt-5 py-4" style="background-color: #622132; color: #fff;">
     <div class="container">
         <div class="row">
             <!-- Información de contacto -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <img src="img/conahcyt-blanco.svg" alt="GIISA" width="200px" height="60px">
-               
                 <p>© 2024 GIISA - Grupo de Investigación e Incidencia Socioambiental. Todos los derechos reservados.</p>
             </div>
 
             <!-- Lo Institucional -->
-            <div class="col-md-4">
-             
-                 <img src="img/logo_ciddir.png"  class="logo"  id="logo_institucion" alt="GIISA" width="60px" height="60px">
-               
+            <div class="col-md-3">
+                <img src="img/logo_ciddir.png" class="logo" id="logo_institucion" alt="GIISA" width="60px" height="60px">
                 <p>Centro Interdisciplinario de Investigación para el Desarrollo Integral Regional, Unidad Oaxaca</p>
-                <p>
-            
-
             </div>
 
             <!-- Redes sociales mejoradas -->
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <h5>Síguenos en</h5>
                 <ul class="list-inline">
                     <li class="list-inline-item">
@@ -768,9 +420,21 @@ background-color: #622132; color: #fff;}
                     </li>
                 </ul>
             </div>
+
+            <!-- Contador de visitas -->
+            <div class="col-md-3">
+                <div class="contador">
+                    <h5>Visitas a esta página</h5>
+                    <h1 id="visit-count" class="text-white" >0</h1>
+                </div>
+            </div>
         </div>
     </div>
 </footer>
+  <script src="script/scroll.js"></script>
+
+<script src="script/contador.js"></script>
+
 
 <!-- Bootstrap JS and FontAwesome for social icons -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -818,6 +482,36 @@ background-color: #622132; color: #fff;}
     });
 
 </script>
+
+<!-- Start of Async Drift Code -->
+<script>
+"use strict";
+
+!function() {
+  var t = window.driftt = window.drift = window.driftt || [];
+  if (!t.init) {
+    if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+    t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+    t.factory = function(e) {
+      return function() {
+        var n = Array.prototype.slice.call(arguments);
+        return n.unshift(e), t.push(n), t;
+      };
+    }, t.methods.forEach(function(e) {
+      t[e] = t.factory(e);
+    }), t.load = function(t) {
+      var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+      o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+      var i = document.getElementsByTagName("script")[0];
+      i.parentNode.insertBefore(o, i);
+    };
+  }
+}();
+drift.SNIPPET_VERSION = '0.3.1';
+drift.load('iucsrsdafw3g');
+</script>
+<!-- End of Async Drift Code -->
+
 </body>
 
 </html>
